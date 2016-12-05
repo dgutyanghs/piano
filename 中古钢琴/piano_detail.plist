@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>型号</string>
+		<string>品牌</string>
+		<string>制造商</string>
+		<string>发行价格(日元)</string>
+		<string>发行日期</string>
+		<string>停产日期</string>
+		<string>样式</string>
+		<string>颜色</string>
+		<string>高度CM</string>
+		<string>长度CM</string>
+		<string>宽度CM</string>
+		<string>重量kg</string>
+		<string>其它功能</string>
+		<string>备注</string>
+	</array>
+	<array>
+		<string>model</string>
+		<string>logo</string>
+		<string>company</string>
+		<string>price</string>
+		<string>since</string>
+		<string>end</string>
+		<string>kind</string>
+		<string>color</string>
+		<string>hight</string>
+		<string>length</string>
+		<string>width</string>
+		<string>height</string>
+		<string>selection</string>
+		<string>remarks</string>
+	</array>
+</array>
+</plist>

@@ -1,0 +1,96 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+//#import "BMapKit.h"
+#import "ISMessages.h"
+
+//#import "MBProgressHUD+MJ.h"
+#import "UIColor+Help.h"
+#import "UIView+Extension.h"
+#import "HLHttpClient.h"
+#import "MJExtension.h"
+#import "PureLayout/PureLayout.h"
+#import "UILabel+StringFrame.h"
+#import "UIFont+HLFont.h"
+#import "ISMessages.h"
+#import "NSString+size.h"
+#import "SDImageCache.h"
+#import "MJRefresh.h"
+
+
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+
+//判断是否为iPhone
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+//判断是否为iPad
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+
+// 1.判断是否为iOS7 >
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+
+#define ScreenWidth   ([UIScreen mainScreen].bounds.size.width)
+#define ScreenHeight  ([UIScreen mainScreen].bounds.size.height)
+
+#define PADDING_TO_EDGE      20
+
+#define HL_PATH_THIRD_TYPE_LOGIN(fileName) [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileName]
+
+//归档路径
+#define HL_PATH(fileName) [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileName]
+
+//归档和解档宏
+#define SB_PERSON_INFO @"sbpersoninfo"
+#define HL_ARCHIVE(object, fileName) [NSKeyedArchiver archiveRootObject:object toFile:HL_PATH(fileName)]
+
+#define HL_UNARCHIVE(fileName) [NSKeyedUnarchiver unarchiveObjectWithFile:HL_PATH(fileName)]
+
+
+#define HL_DATA_BASE_FILE  HL_PATH_THIRD_TYPE_LOGIN(@"smartcoach_underwear.sqlite")
+#define HL_DB_T_HeartRate  @"t_heartRate"
+#define SB_AVATAR_FILE      HL_PATH_THIRD_TYPE_LOGIN(@"avatarfile")
+
+//服务器Base address
+#define PREFIX_Login @"https://www.smartcoach.cn:8082"  //  For login ,register, pwd forgett only
+#define PREFIX @"https://www.smartcoach.cn:8082" // other server Susan
+
+#define TOKEN_TEST @"24c60c35bf8492bd2fbf7d3477947989cf81c8ef84536bfa161560905692e53511a7d3778c46862571e5df4bf382c23103acd9e7f062348fdd60cda0ba1524a68ca089ee5645e23e497f4e7769c9aab0"
+
+
+
+#ifdef DEBUG
+    #define HLLog(...) NSLog(__VA_ARGS__)
+    #define _debuger_name_
+#else
+    #define HLLog(...)
+#endif
+
+#endif
