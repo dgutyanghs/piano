@@ -49,7 +49,6 @@
 {
     [super viewDidLoad];
     
-    
     self.pianosA = (NSMutableArray *)[self DataSourceInit];
 
     
@@ -83,6 +82,19 @@
     [self setupRefresh];
   
 }
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBarHidden = NO;
+}
+
 
 /**
  *  集成刷新控件

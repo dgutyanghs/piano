@@ -381,16 +381,18 @@
             </objects>
             <point key="canvasLocation" x="1621.5" y="488"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="6sq-mC-mkZ">
             <objects>
-                <navigationController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" hidesBarsOnTap="YES" id="FXn-qb-z81" sceneMemberID="viewController">
+                <navigationController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" definesPresentationContext="YES" id="FXn-qb-z81" customClass="HLMainNavigationController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tcC-CR-GDm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nkj-Z6-ZAI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.3370215892791748" green="0.58850908279418945" blue="0.8569411039352417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="atP-Yb-7ch">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

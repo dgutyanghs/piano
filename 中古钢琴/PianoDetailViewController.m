@@ -41,7 +41,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+//    self.navigationController.navigationBar.hidden = NO;
     self.tableView.dataSource   = self;
     self.tableView.delegate     = self;
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
