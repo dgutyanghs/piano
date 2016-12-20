@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<false/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>120.25.207.78</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSLocationUsageDescription</key>
 	<string>查找附近琴行。</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -9,7 +26,7 @@
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDisplayName</key>
-	<string>中古钢琴</string>
+	<string>日本中古钢琴</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
@@ -27,22 +44,18 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string></string>
+			<string>OpenShare</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>openshare</string>
 				<string>wxa1f52d5588366212</string>
+				<string>wb3094744383</string>
 			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>wb3094744383</string>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>3.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>

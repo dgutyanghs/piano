@@ -15,6 +15,7 @@ pod 'KAProgressLabel'
 pod 'XMCircleType'
 pod 'SDWebImage', '~>3.8'
 pod 'MJRefresh'
+pod 'OpenShare', '~>0.0'
 end
 
 

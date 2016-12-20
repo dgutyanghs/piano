@@ -28,6 +28,7 @@
 @property (nonatomic, strong) piano *pianoDetail;
 @property (weak, nonatomic) IBOutlet UISearchBar *SearchBar;
 @property (assign, nonatomic, getter=isSectionIndexTitleShow) BOOL sectionIndexTitleShow;
+@property (weak, nonatomic) IBOutlet UIView *containView;
 
 
 
@@ -40,11 +41,12 @@
 -(NSArray *)newses
 {
     if (!_newses) {
-        self.newses = [MJNews objectArrayWithFilename:@"newses_yang.plist"];
+        self.newses = [MJNews mj_objectArrayWithFilename:@"newses_yang.plist"];
 //        self.newses = [MJNews objectArrayWithFilename:@"newses.plist"];
     }
     return _newses;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -66,18 +68,12 @@
     UIImageView *backView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"girlPiano3.png"]];
     self.tableView.backgroundView = backView;
     
-    // 注册cell
-    if (IS_IPAD) {
-        [self.collectionView registerNib:[UINib nibWithNibName:@"MJNewsCellPad" bundle:nil] forCellWithReuseIdentifier:@"newsIpad"];
-    }else {
-        [self.collectionView registerNib:[UINib nibWithNibName:@"MJNewsCell" bundle:nil] forCellWithReuseIdentifier:@"news"];
-    }
-
+    [self.collectionView registerNib:[UINib nibWithNibName:@"MJNewsCell" bundle:nil] forCellWithReuseIdentifier:@"news"];
     
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:2500 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
 //    [self.collectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     self.title = @"中古钢琴";
-    self.SectionIndexTitleShow = YES;
+    self.sectionIndexTitleShow = YES;
     
     [self setupRefresh];
   
@@ -350,10 +346,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ID = @"news";
-    if (IS_IPAD) {
-        ID = @"newsIpad";
-    }
-    
     MJNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     NSLog(@"collection cell %f, %f", cell.bounds.size.width, cell.bounds.size.height);
 //    NSLog(@"index = %li", (long)indexPath.item);

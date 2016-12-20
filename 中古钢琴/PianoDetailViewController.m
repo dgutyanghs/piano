@@ -9,7 +9,7 @@
 #import "PianoDetailViewController.h"
 #import "SearchViewController.h"
 #import "piano.h"
-#import "ShareSDK/ShareSDK.h"
+//#import "ShareSDK/ShareSDK.h"
 
 @interface PianoDetailViewController ()
 @property (nonatomic, strong) NSDictionary *pianoData;
@@ -150,46 +150,46 @@
     UIImage * imageScreen = [self imageFromView:self.view];
     NSString * content = [NSString stringWithFormat:@"来自App'中古钢琴'：品牌：%@  型号：%@\n", self.pianoDetail.logo, self.pianoDetail.model];
     //1、构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:content
-                                       defaultContent:@"钢琴详细资料"
-                                                image:[ShareSDK pngImageWithImage:imageScreen]
-                                                title:@"中古钢琴"
-                                                  url:@"http://weibo.com/u/1890831653"
-                                          description:@"我的分享"
-                                            mediaType:SSPublishContentMediaTypeNews];
+//    id<ISSContent> publishContent = [ShareSDK content:content
+//                                       defaultContent:@"钢琴详细资料"
+//                                                image:[ShareSDK pngImageWithImage:imageScreen]
+//                                                title:@"中古钢琴"
+//                                                  url:@"http://weibo.com/u/1890831653"
+//                                          description:@"我的分享"
+//                                            mediaType:SSPublishContentMediaTypeNews];
     //1+创建弹出菜单容器（iPad必要）
-    id<ISSContainer> container = [ShareSDK container];
-    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
+//    id<ISSContainer> container = [ShareSDK container];
+//    [container setIPadContainerWithView:sender arrowDirect:UIPopoverArrowDirectionUp];
     
     //2、弹出分享菜单
-    [ShareSDK showShareActionSheet:container
-                         shareList:nil
-                           content:publishContent
-                     statusBarTips:YES
-                       authOptions:nil
-                      shareOptions:nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                
-                                //可以根据回调提示用户。
-                                if (state == SSResponseStateSuccess)
-                                {
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功"
-                                                                                    message:nil
-                                                                                   delegate:self
-                                                                          cancelButtonTitle:@"OK"
-                                                                          otherButtonTitles:nil, nil];
-                                    [alert show];
-                                }
-                                else if (state == SSResponseStateFail)
-                                {
-                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
-                                                                                    message:[NSString stringWithFormat:@"失败描述：%@",[error errorDescription]]
-                                                                                   delegate:self
-                                                                          cancelButtonTitle:@"OK"
-                                                                          otherButtonTitles:nil, nil];
-                                    [alert show];
-                                }
-                            }];
+//    [ShareSDK showShareActionSheet:container
+//                         shareList:nil
+//                           content:publishContent
+//                     statusBarTips:YES
+//                       authOptions:nil
+//                      shareOptions:nil
+//                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+//                                
+//                                //可以根据回调提示用户。
+//                                if (state == SSResponseStateSuccess)
+//                                {
+//                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功"
+//                                                                                    message:nil
+//                                                                                   delegate:self
+//                                                                          cancelButtonTitle:@"OK"
+//                                                                          otherButtonTitles:nil, nil];
+//                                    [alert show];
+//                                }
+//                                else if (state == SSResponseStateFail)
+//                                {
+//                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
+//                                                                                    message:[NSString stringWithFormat:@"失败描述：%@",[error errorDescription]]
+//                                                                                   delegate:self
+//                                                                          cancelButtonTitle:@"OK"
+//                                                                          otherButtonTitles:nil, nil];
+//                                    [alert show];
+//                                }
+//                            }];
 }
 
 

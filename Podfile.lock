@@ -22,6 +22,7 @@ PODS:
   - KAProgressLabel (3.3.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - OpenShare (0.0.1)
   - PureLayout (3.0.2)
   - RSKImageCropper (1.5.1)
   - SDWebImage (3.8.2):
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - KAProgressLabel
   - MJExtension (~> 3.0.10)
   - MJRefresh
+  - OpenShare (~> 0.0)
   - PureLayout (~> 3.0.1)
   - RSKImageCropper
   - SDWebImage (~> 3.8)
@@ -50,11 +52,12 @@ SPEC CHECKSUMS:
   KAProgressLabel: 8ef4544b66f2d8277f8349e0b5ffbab44c95f659
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   XMCircleType: 5400d1ac7ac308853d240644d538d4fcfd06c808
 
-PODFILE CHECKSUM: 050e0cddae07e57fd2de3c0839d021b8068fa058
+PODFILE CHECKSUM: 7836ceb72fc2bcdf8dc831cdbdb9abe4b8e1992d
 
 COCOAPODS: 1.0.1

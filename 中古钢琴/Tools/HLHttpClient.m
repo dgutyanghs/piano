@@ -33,7 +33,8 @@ static NSString *errorStr = nil;
 -(AFHTTPSessionManager *)mgr {
     if (_mgr == nil) {
         _mgr = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:self.config];
-        NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"httpsSmartcoach" ofType:@"cer"];
+        NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"Internet Widgits Pty Ltd" ofType:@"cer"];
+//        NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"httpsSmartcoach" ofType:@"cer"];
         NSData *certData = [NSData dataWithContentsOfFile:cerPath];
         NSSet *certSet =[NSSet setWithObject:certData];
         AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModePublicKey withPinnedCertificates:certSet];
