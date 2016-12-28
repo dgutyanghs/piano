@@ -87,7 +87,7 @@ static NSString *errorStr = nil;
  */
 -(void)registerUserWithInfo:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail
 {
-    NSString *urlStr = [NSString stringWithFormat:@"%@/users/add",PREFIX_Login];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/users/add",PREFIX];
     
     self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     self.mgr.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -149,7 +149,7 @@ static NSString *errorStr = nil;
     [param setValue:phone forKey:@"phone"];
     [param setValue:password forKey:@"password"];
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@/users/get_token",PREFIX_Login];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/users/get_token",PREFIX];
     self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     self.mgr.responseSerializer = [AFJSONResponseSerializer serializer];
     self.mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
@@ -185,7 +185,7 @@ static NSString *errorStr = nil;
  */
 -(void)logoutSuccess:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail
 {
-    NSString *urlStr = [NSString stringWithFormat:@"%@/login/logout",PREFIX_Login];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/login/logout",PREFIX];
     
     NSMutableDictionary *param=[NSMutableDictionary new];
     [param setValue:[[HLAccountManger sharedInstance] getToken] forKey:@"token"];
@@ -237,7 +237,7 @@ static NSString *errorStr = nil;
 -(void)getVerifyCodeFromServerWithPhone:(NSString *)phoneNumber andUsage:(NSDictionary *)dict Success:(void (^)(id responseObject))success Fail:(void (^)(NSString * error))fail
 {
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@/captcha",PREFIX_Login];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/captcha",PREFIX];
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:phoneNumber forKey:@"phone"];
@@ -276,103 +276,6 @@ static NSString *errorStr = nil;
 }
 
 
-/**
- *  获取token 成功回调， 失败回调
- */
--(void)getTokenFromServer
-{
-//    __block  NSString *token = nil;
-//    __weak  HLHttpClient *weakSelf = self;
-//    
-//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    NSString *urlStr = [NSString stringWithFormat:@"%@/login/init",PREFIX_Login];
-//    self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
-//    self.mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-//    NSMutableURLRequest *requst = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:urlStr parameters:param error:nil];
-//    
-//    
-//    if (self.isNetworkReachable) {
-//            if(![self isTokenValid]) {
-//                HLLog(@"getting token .......");
-//                NSURLSessionDataTask *dataTask = [self.mgr dataTaskWithRequest:requst completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-//                    if (error) {
-//                          HLLog(@"网络token请求失败%@",error.localizedDescription);
-//                    }else {
-//                            NSNumber *status = [responseObject valueForKey:@"ok"];
-//                          if ([status intValue]) {  //token请求成功的回调
-//
-//                              token = [responseObject valueForKey:@"token"];
-//                              HLLog(@"token请求成功");
-//                              //1.保存token
-//                              [[HLAccountManger sharedInstance] saveToken:token];
-//
-//                              //2.保存token的有效期
-//                              NSNumber *tokenValidTimeLength = [responseObject valueForKey:@"expire"];
-//                              [weakSelf updateTokenValidTime:tokenValidTimeLength.intValue];
-//
-//                              //3.如果是自动登陆(用户以前登陆过)，则在拿到token后自动进行登陆
-//                              int loginStatus = [[[HLAccountManger sharedInstance] getLoginStatus] intValue];
-//                              if (loginStatus) {
-//                                   HLLog(@"重新get token后, 自动登录中...");
-//                                  NSMutableDictionary *dict = nil;
-//                                  if (loginStatus == NormalTypeMobileNumber) {
-//                                      NSString * phone = [[HLAccountManger sharedInstance] getAccountPhone];
-//                                      NSString * password = [[HLAccountManger sharedInstance] getAccountPassword];
-//
-//                                      [weakSelf loginServerWithPhone:phone Password:password success:^(id responseObject) {
-//                                      }];
-//                                  } else if (loginStatus == OtherTypeLoginQQ) {
-//                                      dict = [NSMutableDictionary dictionaryWithContentsOfFile:HL_PATH_THIRD_TYPE_LOGIN(@"OtherTypeLoginQQ")];
-//                                  } else if (loginStatus == OtherTypeLoginWB) {
-//                                      dict = [NSMutableDictionary dictionaryWithContentsOfFile:HL_PATH_THIRD_TYPE_LOGIN(@"OtherTypeLoginWB")];
-//                                  } else if (loginStatus == OtherTypeLoginWeiXin) {
-//                                      dict = [NSMutableDictionary dictionaryWithContentsOfFile:HL_PATH_THIRD_TYPE_LOGIN(@"OtherTypeLoginWeiXin")];
-//                                  }
-//                                  HLLog(@"read local file %@", dict);
-//                                  //发送登录请求
-//                                  if (loginStatus != NormalTypeMobileNumber) {
-//                                      [weakSelf post:@"/login/thirdlogin" parameters:dict success:^(id responseObject) {
-//                                          HLLog(@"third type login succus %d", loginStatus );
-//                                      } fail:^(NSString *error) {
-//                                          HLLog(@"third type login error %@", error);
-//                                      }];
-//                                  }
-//                              }
-//                              
-//                          } else  {//获取token 失败
-//                              HLLog(@"token请求失败");
-//                              [MBProgressHUD showError:@"get token error"];
-//                          }
-//                    }
-//                }];
-//                
-//          [dataTask resume];
-//        }
-//    }
-}
-
-/**
- *  token是否过期
- */
-//-(BOOL)isTokenValid
-//{
-//    long long delta = 600;
-//    
-//    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
-//    long long currentTime = (long long)[date timeIntervalSince1970];
-//    NSNumber * expireTime = [[HLAccountManger sharedInstance] getTokenExpireTime];
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-//     
-//    NSDate *expDate = [NSDate dateWithTimeIntervalSince1970:[expireTime longLongValue]];
-//    
-//    HLLog(@"is Token valid %@, cur:%@, exp:%@", [[HLAccountManger sharedInstance] getToken],[formatter stringFromDate:date] ,[formatter stringFromDate:expDate]);
-//    if (currentTime < [expireTime longLongValue] - delta) {
-//        return true;
-//    } else {
-//        return false;
-//    }
-//}
 
 /**
  *  new change Susan Bra
@@ -534,7 +437,7 @@ static NSString *errorStr = nil;
 
 -(void)postLogin:(NSString*)interface parameters:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail{
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",PREFIX_Login, interface];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",PREFIX, interface];
     self.mgr.requestSerializer.timeoutInterval = 10.0;
     self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
     self.mgr.responseSerializer = [AFJSONResponseSerializer serializer];

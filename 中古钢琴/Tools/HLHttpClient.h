@@ -81,19 +81,8 @@ typedef NS_ENUM(NSInteger, OtherTypeLoginEnum){
 #pragma mark login
 
 
-/**
- *  short login for first time
- */
-//-(void)shortLoginServerWithPhone:(NSString*)phone Password:(NSString*)verifyCode success:(void (^)(id responseObject))success;
-/**
- *  login normal  auto login (not first time)
- */
-
-//-(void)loginServerWithPhone:(NSString*)phone Password:(NSString*)password success:(void (^)(id responseObject))success;
 
 -(void)registerUserWithInfo:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail;
-//-(void)registerUser:(NSString*)phoneNumber Pass:(NSString*)password VeriCode:(NSString*)code success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail;
-
 
 -(void)logoutSuccess:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail;
 

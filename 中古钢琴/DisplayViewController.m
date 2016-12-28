@@ -43,6 +43,28 @@
     if (!_newses) {
         self.newses = [MJNews mj_objectArrayWithFilename:@"newses_yang.plist"];
 //        self.newses = [MJNews objectArrayWithFilename:@"newses.plist"];
+    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
+    
+    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
+        NSLog(@"response:%@", responseObject.debugDescription);
+        NSArray *datas = responseObject[@"data"];
+        NSDictionary *dict = datas[1];
+        NSString *urlStr = dict[@"icon"];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        UIImage *image = [UIImage imageWithData:imageData];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
+            imageV.frame = CGRectMake(0, 100, ScreenWidth/2, image.size.height/2);
+            imageV.contentMode = UIViewContentModeCenter;
+            [self.view addSubview:imageV];
+            [self.view setNeedsDisplay];
+        });
+    } fail:^(NSString *error) {
+        NSLog(@"err:%@", error);
+    }];
+        
     }
     return _newses;
 }
@@ -74,7 +96,8 @@
 //    [self.collectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     self.title = @"中古钢琴";
     self.sectionIndexTitleShow = YES;
-    
+   
+    NSArray *array =  self.newses;
     [self setupRefresh];
   
 }
@@ -97,7 +120,14 @@
  */
 - (void)setupRefresh
 {
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRerfeshing)];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRerfeshing)];
+    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
+    [httpClient post:nil parameters:nil success:^(id responseObject) {
+        
+    } fail:^(NSString *error) {
+        
+    }];
+    
 
 }
 
@@ -105,32 +135,32 @@
 - (void)headerRerfeshing
 {
 
-    NSURL *url = [NSURL URLWithString:@"http://taobao.com"];
-
-    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:5.0];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (connectionError == nil) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                // 刷新表格
-                [self.tableView reloadData];
-                
-                // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-                [self.tableView.mj_header endRefreshing];
-                [self showNewStatusCount:0];
-            });
-        }else {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [self.tableView.mj_header endRefreshing];
-               UIAlertView *alter = [[UIAlertView alloc]initWithTitle:@"网络不给力" message:@"请检查网络是否连接?" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                alter.alpha = 0.6;
-                alter.tintColor = [UIColor purpleColor];
-                [alter show];
-            });
-
-        }
-
-    } ];
+//    NSURL *url = [NSURL URLWithString:@"http://taobao.com"];
+//
+//    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:5.0];
+//    
+//    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//        if (connectionError == nil) {
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                // 刷新表格
+//                [self.tableView reloadData];
+//                
+//                // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
+//                [self.tableView.mj_header endRefreshing];
+//                [self showNewStatusCount:0];
+//            });
+//        }else {
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                [self.tableView.mj_header endRefreshing];
+//               UIAlertView *alter = [[UIAlertView alloc]initWithTitle:@"网络不给力" message:@"请检查网络是否连接?" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                alter.alpha = 0.6;
+//                alter.tintColor = [UIColor purpleColor];
+//                [alter show];
+//            });
+//
+//        }
+//
+//    } ];
 
 }
 

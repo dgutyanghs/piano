@@ -79,10 +79,7 @@
 #define SB_AVATAR_FILE      HL_PATH_THIRD_TYPE_LOGIN(@"avatarfile")
 
 //服务器Base address
-#define PREFIX_Login @"https://www.smartcoach.cn:8082"  //  For login ,register, pwd forgett only
-#define PREFIX @"https://www.smartcoach.cn:8082" // other server Susan
-
-#define TOKEN_TEST @"24c60c35bf8492bd2fbf7d3477947989cf81c8ef84536bfa161560905692e53511a7d3778c46862571e5df4bf382c23103acd9e7f062348fdd60cda0ba1524a68ca089ee5645e23e497f4e7769c9aab0"
+#define PREFIX @"https://120.25.207.78" // other server Susan
 
 
 
