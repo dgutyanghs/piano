@@ -16,9 +16,13 @@
 #import "UIImage+MJ.h"
 #import "HLPictureScrollView.h"
 
+#import "UIImageView+WebCache.h"
+#import "SDImageCache.h"
+#import "JLPhotoBrowser.h"
 
 
-@interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+
+@interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, HLPictureScrollViewDelegte>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *newses;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
@@ -34,6 +38,7 @@
 
 @property (nonatomic , strong) NSMutableArray *slideImages;
 @property (nonatomic , strong) HLPictureScrollView *slideView;
+@property (nonatomic, strong) NSMutableArray *imagesUrls;
 
 @end
 
@@ -80,12 +85,6 @@
 //    NSArray *array =  self.newses;
     [self setupRefresh];
     
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containViewDidTap:)];
-//    [self.containView addGestureRecognizer:tap];
-  
-//    CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
-//    _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImages:nil viewDisplayMode:UIViewContentModeScaleAspectFill];
-//    [self.containView addSubview:_slideView];
     [self loadPianosPictures];
     
 }
@@ -102,13 +101,14 @@
             NSString *urlStr = dict[@"icon"];
             [imagesUrl addObject:urlStr];
         }
+        self.imagesUrls = [imagesUrl mutableCopy];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.slideView removeFromSuperview];
             CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
             _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
+            _slideView.delegate = weakSelf;
             [weakSelf.containView addSubview:_slideView];
-//            [weakSelf.slideView setNeedsLayout];
             [weakSelf.slideView setNeedsDisplay];
         });
     } fail:^(NSString *error) {
@@ -117,33 +117,37 @@
     
 }
 
--(void)containViewDidTap:(UITapGestureRecognizer *)tap {
-    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
-    
-    __weak __typeof(self) weakSelf = self;
-    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
-        NSLog(@"response:%@", responseObject.debugDescription);
-        NSArray *datas = responseObject[@"data"];
-        
-        NSMutableArray *imagesUrl = [NSMutableArray array];
-        for (NSDictionary *dict in datas) {
-            NSString *urlStr = dict[@"icon"];
-            [imagesUrl addObject:urlStr];
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.slideView removeFromSuperview];
-            CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
-            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
-            [weakSelf.containView addSubview:_slideView];
-            [weakSelf.slideView setNeedsLayout];
-            [weakSelf.slideView setNeedsDisplay];
-        });
-    } fail:^(NSString *error) {
-        NSLog(@"err:%@", error);
-    }];
-        
-}
+//-(void)containViewDidTap:(UITapGestureRecognizer *)tap {
+//    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
+//    
+//    __weak __typeof(self) weakSelf = self;
+//    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
+//        NSLog(@"response:%@", responseObject.debugDescription);
+//        NSArray *datas = responseObject[@"data"];
+//        
+//        NSMutableArray *imagesUrl = [NSMutableArray array];
+//        for (NSDictionary *dict in datas) {
+//            NSString *urlStr = dict[@"icon"];
+//            [imagesUrl addObject:urlStr];
+//        }
+//        
+//        self.imagesUrls = [imagesUrl mutableCopy];
+//        
+////        self.slideImages = [temp mutableCopy];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf.slideView removeFromSuperview];
+//            CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
+//            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
+//            [weakSelf.containView addSubview:_slideView];
+//            [weakSelf.slideView setNeedsLayout];
+//            [weakSelf.slideView setNeedsDisplay];
+//        });
+//    } fail:^(NSString *error) {
+//        NSLog(@"err:%@", error);
+//    }];
+//        
+//}
 
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -287,7 +291,8 @@
     }
     
     cell.textLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row]model];
-    cell.detailTextLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row]logo];
+    cell.detailTextLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row] logo];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:88/255.0 green:149/255.0 blue:217/255.0 alpha:1.0];
 //    cell.imageView.image = [UIImage imageNamed:@"CellLogo.jpg"];
     
     cell.backgroundColor = [UIColor clearColor];
@@ -353,11 +358,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    NSLog(@"_pianoDetail = %@", _pianoDetail);
     _pianoDetail = [[piano alloc]init];
     _pianoDetail = [_pianosA[indexPath.section] objectAtIndex:indexPath.row];
 //    NSLog(@"sel %d, %d model %@, logo %@", indexPath.section, indexPath.row, _pianoDetail.model, _pianoDetail.logo);
-    
+     
     [self performSegueWithIdentifier:@"PianoDetailViewController" sender:nil];
 }
 
@@ -435,6 +441,40 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
+
+#pragma mark -  Picture Delegate
+-(void)pictureScrollImageViewDidTap:(int)index {
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    for (int i=0; i<self.imagesUrls.count; i++) {
+        
+//        UIImageView *child = self.imageViews[i];
+        UIImageView *child = [[UIImageView alloc] init];
+        NSURL *url = [NSURL URLWithString:self.imagesUrls[index]];
+        [child sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"piano1"]];
+        //1.创建photo模型
+        JLPhoto *photo = [[JLPhoto alloc] init];
+        //2.原始imageView
+        photo.sourceImageView = child;
+        //3.要放大图片的url
+        photo.bigImgUrl = self.imagesUrls[i];
+        //标志
+        photo.tag = i;
+        
+        [photos addObject:photo];
+        
+    }
+    
+    //1.创建图片浏览器
+    JLPhotoBrowser *photoBrowser = [[JLPhotoBrowser alloc] init];
+    //2.获取photo数组
+    photoBrowser.photos = photos;
+    //3.当前要显示的图片
+    photoBrowser.currentIndex = index;
+    [photoBrowser show];
+}
+
 
 
 @end
