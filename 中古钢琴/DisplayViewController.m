@@ -14,12 +14,13 @@
 #import "MJNewsCell.h"
 #import "MJExtension.h"
 #import "UIImage+MJ.h"
+#import "HLPictureScrollView.h"
 
 
 
 @interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic)NSArray *newses;
+@property (strong, nonatomic) NSArray *newses;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic, strong) NSMutableArray *pianosA;
@@ -31,7 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIView *containView;
 
 
-
+@property (nonatomic , strong) NSMutableArray *slideImages;
+@property (nonatomic , strong) HLPictureScrollView *slideView;
 
 @end
 
@@ -43,28 +45,6 @@
     if (!_newses) {
         self.newses = [MJNews mj_objectArrayWithFilename:@"newses_yang.plist"];
 //        self.newses = [MJNews objectArrayWithFilename:@"newses.plist"];
-    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
-    
-    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
-        NSLog(@"response:%@", responseObject.debugDescription);
-        NSArray *datas = responseObject[@"data"];
-        NSDictionary *dict = datas[1];
-        NSString *urlStr = dict[@"icon"];
-        NSURL *url = [NSURL URLWithString:urlStr];
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        UIImage *image = [UIImage imageWithData:imageData];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
-            imageV.frame = CGRectMake(0, 100, ScreenWidth/2, image.size.height/2);
-            imageV.contentMode = UIViewContentModeCenter;
-            [self.view addSubview:imageV];
-            [self.view setNeedsDisplay];
-        });
-    } fail:^(NSString *error) {
-        NSLog(@"err:%@", error);
-    }];
-        
     }
     return _newses;
 }
@@ -97,9 +77,72 @@
     self.title = @"中古钢琴";
     self.sectionIndexTitleShow = YES;
    
-    NSArray *array =  self.newses;
+//    NSArray *array =  self.newses;
     [self setupRefresh];
+    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containViewDidTap:)];
+//    [self.containView addGestureRecognizer:tap];
   
+//    CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
+//    _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImages:nil viewDisplayMode:UIViewContentModeScaleAspectFill];
+//    [self.containView addSubview:_slideView];
+    [self loadPianosPictures];
+    
+}
+-(void)loadPianosPictures  {
+    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
+    
+    __weak __typeof(self) weakSelf = self;
+    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
+        NSLog(@"response:%@", responseObject.debugDescription);
+        NSArray *datas = responseObject[@"data"];
+        
+        NSMutableArray *imagesUrl = [NSMutableArray array];
+        for (NSDictionary *dict in datas) {
+            NSString *urlStr = dict[@"icon"];
+            [imagesUrl addObject:urlStr];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.slideView removeFromSuperview];
+            CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
+            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
+            [weakSelf.containView addSubview:_slideView];
+//            [weakSelf.slideView setNeedsLayout];
+            [weakSelf.slideView setNeedsDisplay];
+        });
+    } fail:^(NSString *error) {
+        NSLog(@"err:%@", error);
+    }];
+    
+}
+
+-(void)containViewDidTap:(UITapGestureRecognizer *)tap {
+    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
+    
+    __weak __typeof(self) weakSelf = self;
+    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
+        NSLog(@"response:%@", responseObject.debugDescription);
+        NSArray *datas = responseObject[@"data"];
+        
+        NSMutableArray *imagesUrl = [NSMutableArray array];
+        for (NSDictionary *dict in datas) {
+            NSString *urlStr = dict[@"icon"];
+            [imagesUrl addObject:urlStr];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.slideView removeFromSuperview];
+            CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
+            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
+            [weakSelf.containView addSubview:_slideView];
+            [weakSelf.slideView setNeedsLayout];
+            [weakSelf.slideView setNeedsDisplay];
+        });
+    } fail:^(NSString *error) {
+        NSLog(@"err:%@", error);
+    }];
+        
 }
 
 
@@ -199,9 +242,7 @@
 //    NSLog(@" %f, %f, %f, %f", btnX, btnY, btnW, btnH);
     // 4.通过动画移动按钮(按钮向下移动 btnH + 1)
     [UIView animateWithDuration:0.7 animations:^{
-        
         btn.transform = CGAffineTransformMakeTranslation(0, btnH + 2);
-        
     } completion:^(BOOL finished) { // 向下移动的动画执行完毕后
         
         // 建议:尽量使用animateWithDuration, 不要使用animateKeyframesWithDuration
@@ -270,7 +311,6 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-
     NSString *footer = nil;
     
     if ([self.pianosA[section] count] == 0) {

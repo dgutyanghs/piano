@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638A61E1CCB3B00141902 /* HLPictureScrollView.m */; };
 		0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */; };
 		086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474521DF5471400072CB1 /* HLMainNavigationController.m */; };
 		0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864746D1DF547D600072CB1 /* NSString+Password.m */; };
@@ -88,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084638A51E1CCB3B00141902 /* HLPictureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPictureScrollView.h; sourceTree = "<group>"; };
+		084638A61E1CCB3B00141902 /* HLPictureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPictureScrollView.m; sourceTree = "<group>"; };
 		0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexPianoDataBase.sqlite; sourceTree = "<group>"; };
 		086474511DF5471400072CB1 /* HLMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLMainNavigationController.h; sourceTree = "<group>"; };
 		086474521DF5471400072CB1 /* HLMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLMainNavigationController.m; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 		0864744F1DF5412900072CB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				084638A51E1CCB3B00141902 /* HLPictureScrollView.h */,
+				084638A61E1CCB3B00141902 /* HLPictureScrollView.m */,
 				C04248681A82131900D7628C /* BYAnnotationView.h */,
 				C04248691A82131900D7628C /* BYAnnotationView.m */,
 				C042486A1A82131900D7628C /* BYAnnotationView.xib */,
@@ -612,6 +617,7 @@
 			files = (
 				C015CB191A48CD4100DCE33B /* MJNews.m in Sources */,
 				C04248641A820BEA00D7628C /* TabBarController.m in Sources */,
+				084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */,
 				0864748A1DF5480E00072CB1 /* ISMessages+Alex.m in Sources */,
 				086474811DF547D600072CB1 /* UIImage+MJ.m in Sources */,
 				0864748D1DF5481A00072CB1 /* HLHttpClient.m in Sources */,
