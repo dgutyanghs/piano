@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, SectionButtonIndex) {
         for (int i = 0; i < imageAddress.count; i++) {
             UIImageView *imageView = [UIImageView newAutoLayoutView];
             imageView.contentMode = UIViewContentModeCenter;
-            [imageView sd_setImageWithURL:[NSURL URLWithString:imageAddress[i]] placeholderImage:[UIImage imageNamed:@"piano1"]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:imageAddress[i]] placeholderImage:[UIImage imageNamed:@"piano1"] options:SDWebImageAllowInvalidSSLCertificates];
 
             [self.scrollView addSubview:imageView];
             [imageViewsM addObject:imageView];
@@ -181,7 +181,7 @@ typedef NS_ENUM(NSInteger, SectionButtonIndex) {
     if (imagesUrl.count) {
         for (int i = 0; i < imagesUrl.count; i++) {
             UIImageView *imageView = [[UIImageView alloc] init];
-            [imageView sd_setImageWithURL:imagesUrl[i] placeholderImage:[UIImage imageNamed:@"piano1"]];
+            [imageView sd_setImageWithURL:imagesUrl[i] placeholderImage:[UIImage imageNamed:@"piano1"] options:SDWebImageAllowInvalidSSLCertificates];
             imageView.frame = CGRectMake(i * imageWidth, 0, imageWidth,imageHeight);
             imageView.contentMode = contentMode;
             imageView.userInteractionEnabled = YES;

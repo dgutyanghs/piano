@@ -87,7 +87,11 @@
     
     [self loadPianosPictures];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containViewDidTap:)];
+    [self.containView addGestureRecognizer:tap];
+    
 }
+
 -(void)loadPianosPictures  {
     HLHttpClient *httpClient = [HLHttpClient sharedInstance];
     
@@ -117,37 +121,37 @@
     
 }
 
-//-(void)containViewDidTap:(UITapGestureRecognizer *)tap {
-//    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
-//    
-//    __weak __typeof(self) weakSelf = self;
-//    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
-//        NSLog(@"response:%@", responseObject.debugDescription);
-//        NSArray *datas = responseObject[@"data"];
-//        
-//        NSMutableArray *imagesUrl = [NSMutableArray array];
-//        for (NSDictionary *dict in datas) {
-//            NSString *urlStr = dict[@"icon"];
-//            [imagesUrl addObject:urlStr];
-//        }
-//        
-//        self.imagesUrls = [imagesUrl mutableCopy];
-//        
-////        self.slideImages = [temp mutableCopy];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [weakSelf.slideView removeFromSuperview];
-//            CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
-//            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
-//            [weakSelf.containView addSubview:_slideView];
-//            [weakSelf.slideView setNeedsLayout];
-//            [weakSelf.slideView setNeedsDisplay];
-//        });
-//    } fail:^(NSString *error) {
-//        NSLog(@"err:%@", error);
-//    }];
-//        
-//}
+-(void)containViewDidTap:(UITapGestureRecognizer *)tap {
+    HLHttpClient *httpClient = [HLHttpClient sharedInstance];
+    
+    __weak __typeof(self) weakSelf = self;
+    [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
+        NSLog(@"response:%@", responseObject.debugDescription);
+        NSArray *datas = responseObject[@"data"];
+        
+        NSMutableArray *imagesUrl = [NSMutableArray array];
+        for (NSDictionary *dict in datas) {
+            NSString *urlStr = dict[@"icon"];
+            [imagesUrl addObject:urlStr];
+        }
+        
+        self.imagesUrls = [imagesUrl mutableCopy];
+        
+//        self.slideImages = [temp mutableCopy];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.slideView removeFromSuperview];
+            CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
+            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
+            [weakSelf.containView addSubview:_slideView];
+            [weakSelf.slideView setNeedsLayout];
+            [weakSelf.slideView setNeedsDisplay];
+        });
+    } fail:^(NSString *error) {
+        NSLog(@"err:%@", error);
+    }];
+        
+}
 
 
 -(void)viewWillAppear:(BOOL)animated {
