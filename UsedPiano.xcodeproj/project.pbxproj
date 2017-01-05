@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638A61E1CCB3B00141902 /* HLPictureScrollView.m */; };
-		084638BD1E1D074000141902 /* JLImageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638B81E1D074000141902 /* JLImageListView.m */; };
 		084638BE1E1D074000141902 /* JLPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638BA1E1D074000141902 /* JLPhoto.m */; };
 		084638BF1E1D074000141902 /* JLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638BC1E1D074000141902 /* JLPhotoBrowser.m */; };
 		084638D01E1D094D00141902 /* SDBallProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638C21E1D094D00141902 /* SDBallProgressView.m */; };
@@ -101,8 +100,6 @@
 /* Begin PBXFileReference section */
 		084638A51E1CCB3B00141902 /* HLPictureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPictureScrollView.h; sourceTree = "<group>"; };
 		084638A61E1CCB3B00141902 /* HLPictureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPictureScrollView.m; sourceTree = "<group>"; };
-		084638B71E1D074000141902 /* JLImageListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLImageListView.h; sourceTree = "<group>"; };
-		084638B81E1D074000141902 /* JLImageListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLImageListView.m; sourceTree = "<group>"; };
 		084638B91E1D074000141902 /* JLPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPhoto.h; sourceTree = "<group>"; };
 		084638BA1E1D074000141902 /* JLPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPhoto.m; sourceTree = "<group>"; };
 		084638BB1E1D074000141902 /* JLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPhotoBrowser.h; sourceTree = "<group>"; };
@@ -267,8 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				084638C01E1D094D00141902 /* SDProgressView */,
-				084638B71E1D074000141902 /* JLImageListView.h */,
-				084638B81E1D074000141902 /* JLImageListView.m */,
 				084638B91E1D074000141902 /* JLPhoto.h */,
 				084638BA1E1D074000141902 /* JLPhoto.m */,
 				084638BB1E1D074000141902 /* JLPhotoBrowser.h */,
@@ -697,7 +692,6 @@
 				C054DC3B19FE9AEE00C82E36 /* AppDelegate.m in Sources */,
 				084638D51E1D094D00141902 /* SDRotationLoopProgressView.m in Sources */,
 				086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */,
-				084638BD1E1D074000141902 /* JLImageListView.m in Sources */,
 				C054DC7B19FE9B7D00C82E36 /* DisplayViewController.m in Sources */,
 				084638D31E1D094D00141902 /* SDPieLoopProgressView.m in Sources */,
 				086474991DF556A400072CB1 /* HLAccountManger.m in Sources */,
@@ -867,6 +861,7 @@
 					"$(PROJECT_DIR)/ShareSDK/Extend/WeChatSDK",
 					"$(PROJECT_DIR)/中古钢琴/Baidu",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.UsedPiano;
 				PRODUCT_NAME = UsedPiano;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "中古钢琴/Tool/Used Piano-Bridging-Header.h";
@@ -905,6 +900,7 @@
 					"$(PROJECT_DIR)/ShareSDK/Extend/WeChatSDK",
 					"$(PROJECT_DIR)/中古钢琴/Baidu",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.UsedPiano;
 				PRODUCT_NAME = UsedPiano;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "中古钢琴/Tool/Used Piano-Bridging-Header.h";

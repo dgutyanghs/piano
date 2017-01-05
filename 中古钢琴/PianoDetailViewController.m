@@ -66,6 +66,9 @@
     self.btnShare.layer.cornerRadius = 6;
     self.btnShare.layer.masksToBounds = YES;
 
+    self.btnBaidu.hidden = YES;
+    self.btnTaoBao.hidden = YES;
+    self.btnShare.hidden = YES;
 }
 
 

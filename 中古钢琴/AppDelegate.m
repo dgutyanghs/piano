@@ -39,7 +39,7 @@
 {
     // Override point for customization after application launch.
 //    [ShareSDK registerApp:@"56e2aed30ca4"];
-    [OpenShare connectWeiboWithAppKey:@"3094744383"];
+//    [OpenShare connectWeiboWithAppKey:@"3094744383"];
     [OpenShare connectWeixinWithAppId:@"wxa1f52d5588366212"];
 //    [self initializePlat];
     
