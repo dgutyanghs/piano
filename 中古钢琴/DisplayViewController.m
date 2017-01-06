@@ -110,9 +110,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.slideView removeFromSuperview];
             CGRect slideFrame = CGRectMake(0, 0, self.containView.width, self.containView.height);
-            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleAspectFit];
+            _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleToFill];
             _slideView.delegate = weakSelf;
             [weakSelf.containView addSubview:_slideView];
+            [_slideView autoPinEdgesToSuperviewEdges];
             [weakSelf.slideView setNeedsDisplay];
         });
     } fail:^(NSString *error) {
