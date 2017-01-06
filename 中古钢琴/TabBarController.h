@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaiduViewController.h"
 #import "MapViewController.h"
 
-@interface TabBarController : UITabBarController< UITabBarDelegate, RecentViewControllerDelegate>
+@interface TabBarController : UITabBarController< UITabBarDelegate >
 
-@property (nonatomic, strong) BaiduViewController *baiduViewController;
 @property (nonatomic, strong) MapViewController *mapViewController;
 @end

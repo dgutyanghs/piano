@@ -8,29 +8,9 @@
 
 #import "AppDelegate.h"
 #import "OpenShareHeader.h"
-//#import "WeiboSDK.h"
-//#import "BMapKit.h"
-//#import "WXApi.h"
-//#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
-//
-//#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
-//
-//#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
-//
-//#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
-//
-//#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
-//
-//#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
-//
-//#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
 
-#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
 @interface AppDelegate()<BMKGeneralDelegate>
-{
-    BMKMapManager *_mapManager;
-}
 
 @end
 @implementation AppDelegate
@@ -38,18 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-//    [ShareSDK registerApp:@"56e2aed30ca4"];
 //    [OpenShare connectWeiboWithAppKey:@"3094744383"];
-    [OpenShare connectWeixinWithAppId:@"wxa1f52d5588366212"];
+//    [OpenShare connectWeixinWithAppId:@"wxa1f52d5588366212"];
 //    [self initializePlat];
     
-//    _mapManager = [[BMKMapManager alloc]init];
-//    BOOL ret = [_mapManager start:@"0WKlYEhudtiwmG6SeWqgLaan" generalDelegate:self];
-//    if (!ret) {
-//        NSLog(@"manager start fail");
-//    }
-//    
-//    [BMKMapView class];
     
     return YES;
 }
@@ -81,39 +53,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-- (void)initializePlat
-{
-    /**
-     连接新浪微博开放平台应用以使用相关功能，此应用需要引用SinaWeiboConnection.framework
-     http://open.weibo.com上注册新浪微博开放平台应用，并将相关信息填写到以下字段
-     **/
-//    [ShareSDK connectSinaWeiboWithAppKey:@"3094744383"
-//                               appSecret:@"017e9517fbea1c13c1b188d44e9b0395"
-//                             redirectUri:@"https://api.weibo.com/oauth2/default.html"];
-//    
-//
-//   // 微信
-//    [ShareSDK connectWeChatWithAppId:@"wxa1f52d5588366212"   //微信APPID
-//                           appSecret:@"54a1addf5488cc33d415afe7a41b52dd"  //微信APPSecret
-//                           wechatCls:[WXApi class]];
-    /**
-     连接腾讯微博开放平台应用以使用相关功能，此应用需要引用TencentWeiboConnection.framework
-     http://dev.t.qq.com上注册腾讯微博开放平台应用，并将相关信息填写到以下字段
-     
-     如果需要实现SSO，需要导入libWeiboSDK.a，并引入WBApi.h，将WBApi类型传入接口
-     **/
-//    [ShareSDK connectTencentWeiboWithAppKey:@"wxa1f52d5588366212"
-//                                  appSecret:@"54a1addf5488cc33d415afe7a41b52dd"
-//                                redirectUri:@"http://www.sharesdk.cn"
-//                                   wbApiCls:[WeiboApi class]];
-    
-//    //连接短信分享
-//    if (IS_IPHONE) {
-//           [ShareSDK connectSMS]; 
-//    }
-
-}
 
 
 

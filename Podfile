@@ -7,7 +7,7 @@ target "UsedPiano" do
 pod 'AFNetworking', '~> 3.0.4'
 pod 'MJExtension', '~> 3.0.10'
 pod 'PureLayout' , '~> 3.0.1'
-pod 'BaiduMap-iOS-SDK', '~> 2.10.2'
+#pod 'BaiduMap-iOS-SDK', '~> 2.10.2'
 pod 'RSKImageCropper'
 pod 'FMDB'
 pod 'ISMessages'

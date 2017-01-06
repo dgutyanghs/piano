@@ -17,9 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.baiduViewController = self.viewControllers[0];
     self.mapViewController = self.viewControllers[1];
-    self.baiduViewController.cellDelegate = self;
 
 
 //    NSLog(@"addr %p", self.recentViewController);
