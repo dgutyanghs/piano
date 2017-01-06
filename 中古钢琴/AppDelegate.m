@@ -10,7 +10,7 @@
 #import "OpenShareHeader.h"
 
 
-@interface AppDelegate()<BMKGeneralDelegate>
+@interface AppDelegate()
 
 @end
 @implementation AppDelegate

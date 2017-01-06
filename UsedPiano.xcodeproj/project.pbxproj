@@ -43,10 +43,6 @@
 		C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFEE1A80F0540011454D /* girlPiano2.jpg */; };
 		C02AAFF11A80F1B60011454D /* girlPiano3.png in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFF01A80F1B60011454D /* girlPiano3.png */; };
 		C04248641A820BEA00D7628C /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C04248631A820BEA00D7628C /* TabBarController.m */; };
-		C04248671A820C0A00D7628C /* MapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C04248661A820C0A00D7628C /* MapViewController.mm */; };
-		C042486B1A82131900D7628C /* BYAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C04248691A82131900D7628C /* BYAnnotationView.m */; };
-		C042486C1A82131900D7628C /* BYAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C042486A1A82131900D7628C /* BYAnnotationView.xib */; };
-		C042486F1A82136100D7628C /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C042486E1A82136100D7628C /* MapPoint.m */; };
 		C054DC2B19FE9AEE00C82E36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C054DC2A19FE9AEE00C82E36 /* Foundation.framework */; };
 		C054DC2D19FE9AEE00C82E36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C054DC2C19FE9AEE00C82E36 /* CoreGraphics.framework */; };
 		C054DC2F19FE9AEE00C82E36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C054DC2E19FE9AEE00C82E36 /* UIKit.framework */; };
@@ -164,13 +160,6 @@
 		C02AAFF01A80F1B60011454D /* girlPiano3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = girlPiano3.png; path = AppIcon/girlPiano3.png; sourceTree = "<group>"; };
 		C04248621A820BEA00D7628C /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		C04248631A820BEA00D7628C /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		C04248651A820C0A00D7628C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		C04248661A820C0A00D7628C /* MapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapViewController.mm; sourceTree = "<group>"; };
-		C04248681A82131900D7628C /* BYAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYAnnotationView.h; sourceTree = "<group>"; };
-		C04248691A82131900D7628C /* BYAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYAnnotationView.m; sourceTree = "<group>"; };
-		C042486A1A82131900D7628C /* BYAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BYAnnotationView.xib; sourceTree = "<group>"; };
-		C042486D1A82136100D7628C /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
-		C042486E1A82136100D7628C /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
 		C054DC2719FE9AEE00C82E36 /* UsedPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsedPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C054DC2A19FE9AEE00C82E36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C054DC2C19FE9AEE00C82E36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -309,9 +298,6 @@
 			children = (
 				084638A51E1CCB3B00141902 /* HLPictureScrollView.h */,
 				084638A61E1CCB3B00141902 /* HLPictureScrollView.m */,
-				C04248681A82131900D7628C /* BYAnnotationView.h */,
-				C04248691A82131900D7628C /* BYAnnotationView.m */,
-				C042486A1A82131900D7628C /* BYAnnotationView.xib */,
 				C015CB141A48CD4100DCE33B /* MJNews.h */,
 				C015CB151A48CD4100DCE33B /* MJNews.m */,
 				C015CB161A48CD4100DCE33B /* MJNewsCell.h */,
@@ -340,8 +326,6 @@
 				C054DC7719FE9B7D00C82E36 /* SearchViewController.m */,
 				C04248621A820BEA00D7628C /* TabBarController.h */,
 				C04248631A820BEA00D7628C /* TabBarController.m */,
-				C04248651A820C0A00D7628C /* MapViewController.h */,
-				C04248661A820C0A00D7628C /* MapViewController.mm */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -459,8 +443,6 @@
 				0864744E1DF5411700072CB1 /* Model */,
 				086474501DF5447400072CB1 /* Controller */,
 				C0C5C8551A49761800449FE1 /* MainIpad.storyboard */,
-				C042486D1A82136100D7628C /* MapPoint.h */,
-				C042486E1A82136100D7628C /* MapPoint.m */,
 				C054DC3919FE9AEE00C82E36 /* AppDelegate.h */,
 				C054DC3A19FE9AEE00C82E36 /* AppDelegate.m */,
 				C054DC4219FE9AEE00C82E36 /* Images.xcassets */,
@@ -558,7 +540,7 @@
 				ORGANIZATIONNAME = Blueyang;
 				TargetAttributes = {
 					C054DC2619FE9AEE00C82E36 = {
-						DevelopmentTeam = 5UMZ2GBNFV;
+						DevelopmentTeam = X77M95VSB8;
 						ProvisioningStyle = Automatic;
 					};
 					C054DC4719FE9AEE00C82E36 = {
@@ -595,7 +577,6 @@
 				C07D812A1A48E63900CE0610 /* newses_yang.plist in Resources */,
 				C02AAFF11A80F1B60011454D /* girlPiano3.png in Resources */,
 				C0C5C8581A499CB000449FE1 /* MJNewsCell.xib in Resources */,
-				C042486C1A82131900D7628C /* BYAnnotationView.xib in Resources */,
 				0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */,
 				C0C8938F1A00EDC0001BE1F0 /* piano_detail.plist in Resources */,
 				C0C5C8541A496F5C00449FE1 /* MJNewsCellPad.xib in Resources */,
@@ -664,7 +645,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -692,7 +673,6 @@
 				084638D31E1D094D00141902 /* SDPieLoopProgressView.m in Sources */,
 				086474991DF556A400072CB1 /* HLAccountManger.m in Sources */,
 				C054DC3719FE9AEE00C82E36 /* main.m in Sources */,
-				C04248671A820C0A00D7628C /* MapViewController.mm in Sources */,
 				086474871DF5480200072CB1 /* UIBarButtonItem+Extension.m in Sources */,
 				086474841DF547D600072CB1 /* UIView+Extension.m in Sources */,
 				084638BE1E1D074000141902 /* JLPhoto.m in Sources */,
@@ -703,9 +683,7 @@
 				C054DC7C19FE9B7D00C82E36 /* PianoDetailViewController.m in Sources */,
 				0864747F1DF547D600072CB1 /* UIColor+Help.m in Sources */,
 				0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */,
-				C042486B1A82131900D7628C /* BYAnnotationView.m in Sources */,
 				084638D11E1D094D00141902 /* SDBaseProgressView.m in Sources */,
-				C042486F1A82136100D7628C /* MapPoint.m in Sources */,
 				0864747E1DF547D600072CB1 /* NSString+size.m in Sources */,
 				084638D01E1D094D00141902 /* SDBallProgressView.m in Sources */,
 				084638D61E1D094D00141902 /* SDTransparentPieProgressView.m in Sources */,
@@ -836,7 +814,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5UMZ2GBNFV;
+				DEVELOPMENT_TEAM = X77M95VSB8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -867,7 +845,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5UMZ2GBNFV;
+				DEVELOPMENT_TEAM = X77M95VSB8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

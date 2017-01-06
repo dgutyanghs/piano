@@ -14,50 +14,41 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - BaiduMap-iOS-SDK (2.10.2)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
-  - ISMessages (1.1)
-  - KAProgressLabel (3.3.0)
+  - ISMessages (1.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - OpenShare (0.0.1)
   - PureLayout (3.0.2)
-  - RSKImageCropper (1.5.1)
+  - RSKImageCropper (1.5.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - XMCircleType (1.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
-  - BaiduMap-iOS-SDK (~> 2.10.2)
   - FMDB
   - ISMessages
-  - KAProgressLabel
   - MJExtension (~> 3.0.10)
   - MJRefresh
   - OpenShare (~> 0.0)
   - PureLayout (~> 3.0.1)
   - RSKImageCropper
   - SDWebImage (~> 3.8)
-  - XMCircleType
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  BaiduMap-iOS-SDK: 970d9c1c07c227d23fba9a9bd0e7567b2958d72c
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  ISMessages: 7ebb5ff68170ef0e32460d270f379b6080297e39
-  KAProgressLabel: 8ef4544b66f2d8277f8349e0b5ffbab44c95f659
+  ISMessages: d39098b48672813d69d30f44da06260b9920fed4
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  RSKImageCropper: edd65fedb3734332818deb139906d6b7f54b8a44
+  RSKImageCropper: 27d0e7efa800b509720163c3561fe08a04853780
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  XMCircleType: 5400d1ac7ac308853d240644d538d4fcfd06c808
 
-PODFILE CHECKSUM: 7836ceb72fc2bcdf8dc831cdbdb9abe4b8e1992d
+PODFILE CHECKSUM: d4839180f577cba4b88a23c93515a2e1285fef5a
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MapViewController.h"
 
 @interface TabBarController : UITabBarController< UITabBarDelegate >
 
-@property (nonatomic, strong) MapViewController *mapViewController;
 @end
