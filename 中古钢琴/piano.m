@@ -21,53 +21,6 @@ static  NSMutableArray *arrayLogos = nil;
 @implementation piano
 
 
-/**
- init piano data from database;
- */
-//+(NSArray *)pianoInit
-//{
-//        NSMutableArray  *pianosA    = [NSMutableArray array];
-//        NSString        *filename   = [[NSBundle mainBundle]pathForResource:@"blueDataBase" ofType:@"sqlite"];
-////        NSLog(@"file path %@", filename);
-//    
-//        db = [FMDatabase databaseWithPath:filename];
-//        
-//        if ([db open]) {
-//                NSLog(@"数据库打开成功");
-//
-//                FMResultSet *rs = [db executeQuery:@"select * from JapanUsedPiano_copy ;"];
-//            
-//                while (rs.next) {
-//                    piano *p = [[piano alloc]init];
-//                    
-//                    p.ID        = [rs intForColumn:@"id"];
-//                    p.company   = [rs stringForColumn:@"company"];
-//                    p.logo      = [rs stringForColumn:@"logo"];
-//                    p.model     = [rs stringForColumn:@"model"];
-//                    p.hight     = [rs intForColumn:@"hight"];
-//                    p.width     = [rs intForColumn:@"width"];
-//                    p.length    = [rs intForColumn:@"length"];
-//                    p.height    = [rs intForColumn:@"height"];
-//                    p.since     = [rs stringForColumn:@"since"];
-//                    p.end       = [rs stringForColumn:@"end"];
-//                    p.price     = [rs intForColumn:@"price"];
-//                    p.kind      = [rs stringForColumn:@"kind"];
-//                    p.color     = [rs stringForColumn:@"color"];
-//                    p.selection = [rs stringForColumn:@"selection"];
-//                    p.remarks   = [rs stringForColumn:@"remarks"];
-//                    
-//                    //        NSLog(@"%d %@ %@ %@", p.ID, p.company, p.logo, p.model);
-//                    [pianosA addObject:p];
-//                }
-//            
-//        } else {
-//            NSLog(@"数据库打开失败");
-//        }
-//
-//    return pianosA;
-//}
-
-
 
 +(NSArray *)pianoSearchRet:(NSString *)searchText
 {

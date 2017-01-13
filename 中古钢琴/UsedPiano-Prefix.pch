@@ -27,7 +27,7 @@
 #import "ISMessages.h"
 #import "NSString+size.h"
 #import "SDImageCache.h"
-#import "MJRefresh.h"
+//#import "MJRefresh.h"
 
 
 //#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件

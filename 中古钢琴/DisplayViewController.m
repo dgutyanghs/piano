@@ -187,32 +187,6 @@
 - (void)headerRerfeshing
 {
 
-//    NSURL *url = [NSURL URLWithString:@"http://taobao.com"];
-//
-//    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url cachePolicy:0 timeoutInterval:5.0];
-//    
-//    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        if (connectionError == nil) {
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                // 刷新表格
-//                [self.tableView reloadData];
-//                
-//                // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-//                [self.tableView.mj_header endRefreshing];
-//                [self showNewStatusCount:0];
-//            });
-//        }else {
-//            dispatch_sync(dispatch_get_main_queue(), ^{
-//                [self.tableView.mj_header endRefreshing];
-//               UIAlertView *alter = [[UIAlertView alloc]initWithTitle:@"网络不给力" message:@"请检查网络是否连接?" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//                alter.alpha = 0.6;
-//                alter.tintColor = [UIColor purpleColor];
-//                [alter show];
-//            });
-//
-//        }
-//
-//    } ];
 
 }
 
@@ -267,7 +241,6 @@
 
 -(NSArray *)DataSourceInit
 {
-//    return  [piano pianoInit];
     return [piano pianoArrayByLogo];
 }
 
@@ -298,7 +271,6 @@
     cell.textLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row]model];
     cell.detailTextLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row] logo];
     cell.detailTextLabel.textColor = [UIColor colorWithRed:88/255.0 green:149/255.0 blue:217/255.0 alpha:1.0];
-//    cell.imageView.image = [UIImage imageNamed:@"CellLogo.jpg"];
     
     cell.backgroundColor = [UIColor clearColor];
     return cell;
@@ -338,25 +310,29 @@
 
 -(NSArray*)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-//    NSLog(@"search bar text %@", _SearchBar.text);
     if (self.isSectionIndexTitleShow) {
-           return [piano pianoLogos];
+        NSMutableArray <NSString *> *logosHeader = [NSMutableArray array];
+        NSArray <NSString *> *logos =   [piano pianoLogos];
+        
+        for (NSString *name in logos) {
+            NSString *firstLetter = [name substringWithRange:NSMakeRange(0, 1)];
+            [logosHeader addObject:firstLetter];
+        }
+        
+        return logosHeader;
+        
     }else {
         return nil;
     }
-
 }
 
 #pragma mark - UITableViewDelegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    NSLog(@"scroll....");
     if ([scrollView isEqual:self.tableView]) {
            [self.searchBar resignFirstResponder];
     }
-
-    
 }
 
 
@@ -364,10 +340,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    NSLog(@"_pianoDetail = %@", _pianoDetail);
     _pianoDetail = [[piano alloc]init];
     _pianoDetail = [_pianosA[indexPath.section] objectAtIndex:indexPath.row];
-//    NSLog(@"sel %d, %d model %@, logo %@", indexPath.section, indexPath.row, _pianoDetail.model, _pianoDetail.logo);
      
     [self performSegueWithIdentifier:@"PianoDetailViewController" sender:nil];
 }
@@ -377,8 +351,6 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-//    NSLog(@"searchText = %@", searchText);
-
     [self.pianosA removeAllObjects];
     if ([searchText isEqualToString:@""]) {
         self.pianosA = (NSMutableArray *)[self DataSourceInit];
@@ -393,7 +365,6 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    NSLog(@"search click");
     [self.searchBar resignFirstResponder];
 }
 
@@ -403,12 +374,8 @@
 {
     if ([segue.identifier isEqualToString:@"PianoDetailViewController"]) {
 
-
         PianoDetailViewController *pianoDetailVC = segue.destinationViewController;
         pianoDetailVC.pianoDetail = self.pianoDetail;
-
-//        NSLog(@"prepare  pianoDetailVC %@", pianoDetailVC);
-
     }
     
 }
@@ -436,11 +403,6 @@
     return cell;
 }
 
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSInteger i = indexPath.item % self.newses.count;
-//    self.pageControl.currentPage = i;
-//}
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
