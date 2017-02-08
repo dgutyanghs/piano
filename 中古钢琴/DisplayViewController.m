@@ -98,9 +98,9 @@
     __weak __typeof(self) weakSelf = self;
     [httpClient post:@"/hotnews" parameters:nil success:^(NSDictionary * responseObject) {
         NSLog(@"response:%@", responseObject.debugDescription);
-        NSArray *datas = responseObject[@"data"];
+        NSArray *datas = responseObject[@"pianonews"];
         
-        NSMutableArray *imagesUrl = [NSMutableArray array];
+        NSMutableArray <NSString *> *imagesUrl = [NSMutableArray array];
         for (NSDictionary *dict in datas) {
             NSString *urlStr = dict[@"icon"];
             [imagesUrl addObject:urlStr];
@@ -113,7 +113,7 @@
             _slideView = [HLPictureScrollView viewWithFrame:slideFrame andImagesUrl:imagesUrl viewDisplayMode: UIViewContentModeScaleToFill];
             _slideView.delegate = weakSelf;
             [weakSelf.containView addSubview:_slideView];
-            [_slideView autoPinEdgesToSuperviewEdges];
+            [_slideView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(44, 0, 0, 0)];
             [weakSelf.slideView setNeedsDisplay];
         });
     } fail:^(NSString *error) {
