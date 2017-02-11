@@ -24,11 +24,6 @@ typedef void(^actionBlock)(NSNumber *index);
 @property (copy,   nonatomic) actionBlock callBackBlock;
 @property (assign, nonatomic) NSInteger pageCount;
 
-+(instancetype)viewWithFrame:(CGRect)frame andImages:(NSArray *)images;
-//+(instancetype)viewWithImages:(NSArray *)images andHeight:(CGFloat)height;
-//+(instancetype)viewWithTitles:(NSArray *)titles andHeight:(CGFloat)height callBack:(actionBlock) block;
-
-+(instancetype)viewWithFrame:(CGRect)frame andImages:(NSArray *)images viewDisplayMode:(UIViewContentMode)contentMode;
 -(void)refreshWithImagesURLStr:(NSArray *)imageAddress;
 +(instancetype)viewWithFrame:(CGRect)frame andImagesUrl:(NSArray *)imagesUrl viewDisplayMode:(UIViewContentMode)contentMode;
 @end

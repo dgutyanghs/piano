@@ -15,7 +15,7 @@ static SBFMDBTool *_instance = nil;
  *  错误信息返回
  */
 //static NSString *errorStr = nil;
-static const int secondsPerDay = 24 * 60 * 60;
+//static const int secondsPerDay = 24 * 60 * 60;
 
 @interface SBFMDBTool ()
 @property (nonatomic, strong) FMDatabase *db;

@@ -20,7 +20,7 @@
 
 
 
-@interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, HLPictureScrollViewDelegte>
+@interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, HLPictureScrollViewDelegte>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *newses;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
@@ -48,31 +48,22 @@
 {
     [super viewDidLoad];
     
+    self.title = @"中古钢琴";
+    self.sectionIndexTitleShow = YES;
+    
     self.pianosA = (NSMutableArray *)[self DataSourceInit];
-
     
     self.tableView.dataSource = self;
     self.tableView.delegate   = self;
-    
     
     self.searchBar.placeholder = @"查询钢琴型号或品牌";
     self.searchBar.delegate  = self;
     
     
-    self.collectionView.dataSource = self;
-    self.collectionView.delegate = self;
-    
     UIImageView *backView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"girlPiano3.png"]];
     self.tableView.backgroundView = backView;
     
-    [self.collectionView registerNib:[UINib nibWithNibName:@"MJNewsCell" bundle:nil] forCellWithReuseIdentifier:@"news"];
-    
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:2500 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
-//    [self.collectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-    self.title = @"中古钢琴";
-    self.sectionIndexTitleShow = YES;
    
-//    NSArray *array =  self.newses;
     [self setupRefresh];
     
     [self loadPianosPictures];

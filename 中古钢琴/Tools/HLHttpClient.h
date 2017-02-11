@@ -87,7 +87,6 @@ typedef NS_ENUM(NSInteger, OtherTypeLoginEnum){
 -(void)logoutSuccess:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail;
 
 
--(void)getTokenFromServer;
 -(void)getVerifyCodeFromServerWithPhone:(NSString *)phoneNumber andUsage:(NSDictionary *)dict Success:(void (^)(id responseObject))success Fail:(void (^)(NSString * error))fail;
 -(void)postLogin:(NSString*)interface parameters:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail;
 @end

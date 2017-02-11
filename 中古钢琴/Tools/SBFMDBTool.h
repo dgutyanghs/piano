@@ -16,6 +16,5 @@
 +(instancetype)sharedInstance;
 
 
--(NSArray <HLHeartRateModel *>*)SBCollectHeartRateDataByDate:(NSDate *)date;
 -(void)SBInsertHeartRateValue:(uint8_t)value andDate:(NSDate *) recordDate;
 @end
