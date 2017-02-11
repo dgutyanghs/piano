@@ -8,15 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638A61E1CCB3B00141902 /* HLPictureScrollView.m */; };
-		084638BE1E1D074000141902 /* JLPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638BA1E1D074000141902 /* JLPhoto.m */; };
-		084638BF1E1D074000141902 /* JLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638BC1E1D074000141902 /* JLPhotoBrowser.m */; };
-		084638D01E1D094D00141902 /* SDBallProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638C21E1D094D00141902 /* SDBallProgressView.m */; };
-		084638D11E1D094D00141902 /* SDBaseProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638C41E1D094D00141902 /* SDBaseProgressView.m */; };
-		084638D21E1D094D00141902 /* SDLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638C61E1D094D00141902 /* SDLoopProgressView.m */; };
-		084638D31E1D094D00141902 /* SDPieLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638C81E1D094D00141902 /* SDPieLoopProgressView.m */; };
-		084638D41E1D094D00141902 /* SDPieProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638CA1E1D094D00141902 /* SDPieProgressView.m */; };
-		084638D51E1D094D00141902 /* SDRotationLoopProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638CD1E1D094D00141902 /* SDRotationLoopProgressView.m */; };
-		084638D61E1D094D00141902 /* SDTransparentPieProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638CF1E1D094D00141902 /* SDTransparentPieProgressView.m */; };
 		0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */; };
 		086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474521DF5471400072CB1 /* HLMainNavigationController.m */; };
 		0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864746D1DF547D600072CB1 /* NSString+Password.m */; };
@@ -66,6 +57,12 @@
 		C08B1A701A7237480079A116 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08B1A6F1A7237480079A116 /* MessageUI.framework */; };
 		C0C5C8561A49761800449FE1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C5C8551A49761800449FE1 /* MainStoryboard.storyboard */; };
 		C0C8938F1A00EDC0001BE1F0 /* piano_detail.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0C8938E1A00EDC0001BE1F0 /* piano_detail.plist */; };
+		C0D64ED11E4EABD500C91851 /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64EC61E4EABD500C91851 /* HZPhotoBrowser.m */; };
+		C0D64ED21E4EABD500C91851 /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64EC91E4EABD500C91851 /* HZPhotoBrowserView.m */; };
+		C0D64ED31E4EABD500C91851 /* HZPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64ECB1E4EABD500C91851 /* HZPhotoGroup.m */; };
+		C0D64ED41E4EABD500C91851 /* HZPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64ECD1E4EABD500C91851 /* HZPhotoItem.m */; };
+		C0D64ED51E4EABD500C91851 /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64ECF1E4EABD500C91851 /* HZWaitingView.m */; };
+		C0D64ED61E4EABD500C91851 /* whiteplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D64ED01E4EABD500C91851 /* whiteplaceholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,25 +78,6 @@
 /* Begin PBXFileReference section */
 		084638A51E1CCB3B00141902 /* HLPictureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPictureScrollView.h; sourceTree = "<group>"; };
 		084638A61E1CCB3B00141902 /* HLPictureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPictureScrollView.m; sourceTree = "<group>"; };
-		084638B91E1D074000141902 /* JLPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPhoto.h; sourceTree = "<group>"; };
-		084638BA1E1D074000141902 /* JLPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPhoto.m; sourceTree = "<group>"; };
-		084638BB1E1D074000141902 /* JLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPhotoBrowser.h; sourceTree = "<group>"; };
-		084638BC1E1D074000141902 /* JLPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPhotoBrowser.m; sourceTree = "<group>"; };
-		084638C11E1D094D00141902 /* SDBallProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBallProgressView.h; sourceTree = "<group>"; };
-		084638C21E1D094D00141902 /* SDBallProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBallProgressView.m; sourceTree = "<group>"; };
-		084638C31E1D094D00141902 /* SDBaseProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBaseProgressView.h; sourceTree = "<group>"; };
-		084638C41E1D094D00141902 /* SDBaseProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBaseProgressView.m; sourceTree = "<group>"; };
-		084638C51E1D094D00141902 /* SDLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLoopProgressView.h; sourceTree = "<group>"; };
-		084638C61E1D094D00141902 /* SDLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLoopProgressView.m; sourceTree = "<group>"; };
-		084638C71E1D094D00141902 /* SDPieLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPieLoopProgressView.h; sourceTree = "<group>"; };
-		084638C81E1D094D00141902 /* SDPieLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPieLoopProgressView.m; sourceTree = "<group>"; };
-		084638C91E1D094D00141902 /* SDPieProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPieProgressView.h; sourceTree = "<group>"; };
-		084638CA1E1D094D00141902 /* SDPieProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPieProgressView.m; sourceTree = "<group>"; };
-		084638CB1E1D094D00141902 /* SDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDProgressView.h; sourceTree = "<group>"; };
-		084638CC1E1D094D00141902 /* SDRotationLoopProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDRotationLoopProgressView.h; sourceTree = "<group>"; };
-		084638CD1E1D094D00141902 /* SDRotationLoopProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDRotationLoopProgressView.m; sourceTree = "<group>"; };
-		084638CE1E1D094D00141902 /* SDTransparentPieProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDTransparentPieProgressView.h; sourceTree = "<group>"; };
-		084638CF1E1D094D00141902 /* SDTransparentPieProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDTransparentPieProgressView.m; sourceTree = "<group>"; };
 		0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexPianoDataBase.sqlite; sourceTree = "<group>"; };
 		086474511DF5471400072CB1 /* HLMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLMainNavigationController.h; sourceTree = "<group>"; };
 		086474521DF5471400072CB1 /* HLMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLMainNavigationController.m; sourceTree = "<group>"; };
@@ -174,6 +152,18 @@
 		C08B1A6F1A7237480079A116 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C0C5C8551A49761800449FE1 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C0C8938E1A00EDC0001BE1F0 /* piano_detail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = piano_detail.plist; sourceTree = "<group>"; };
+		C0D64EC51E4EABD500C91851 /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
+		C0D64EC61E4EABD500C91851 /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
+		C0D64EC71E4EABD500C91851 /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		C0D64EC81E4EABD500C91851 /* HZPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserView.h; sourceTree = "<group>"; };
+		C0D64EC91E4EABD500C91851 /* HZPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowserView.m; sourceTree = "<group>"; };
+		C0D64ECA1E4EABD500C91851 /* HZPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoGroup.h; sourceTree = "<group>"; };
+		C0D64ECB1E4EABD500C91851 /* HZPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoGroup.m; sourceTree = "<group>"; };
+		C0D64ECC1E4EABD500C91851 /* HZPhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoItem.h; sourceTree = "<group>"; };
+		C0D64ECD1E4EABD500C91851 /* HZPhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoItem.m; sourceTree = "<group>"; };
+		C0D64ECE1E4EABD500C91851 /* HZWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWaitingView.h; sourceTree = "<group>"; };
+		C0D64ECF1E4EABD500C91851 /* HZWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWaitingView.m; sourceTree = "<group>"; };
+		C0D64ED01E4EABD500C91851 /* whiteplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteplaceholder.png; sourceTree = "<group>"; };
 		E44589926D07BF3D0B007775 /* Pods-UsedPiano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsedPiano.release.xcconfig"; path = "Pods/Target Support Files/Pods-UsedPiano/Pods-UsedPiano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,38 +201,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		084638B61E1D074000141902 /* Classes */ = {
+		084638B61E1D074000141902 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				084638C01E1D094D00141902 /* SDProgressView */,
-				084638B91E1D074000141902 /* JLPhoto.h */,
-				084638BA1E1D074000141902 /* JLPhoto.m */,
-				084638BB1E1D074000141902 /* JLPhotoBrowser.h */,
-				084638BC1E1D074000141902 /* JLPhotoBrowser.m */,
+				C0D64EC41E4EABD500C91851 /* ptotoBrowser */,
 			);
+			name = PhotoBrowser;
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		084638C01E1D094D00141902 /* SDProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				084638C11E1D094D00141902 /* SDBallProgressView.h */,
-				084638C21E1D094D00141902 /* SDBallProgressView.m */,
-				084638C31E1D094D00141902 /* SDBaseProgressView.h */,
-				084638C41E1D094D00141902 /* SDBaseProgressView.m */,
-				084638C51E1D094D00141902 /* SDLoopProgressView.h */,
-				084638C61E1D094D00141902 /* SDLoopProgressView.m */,
-				084638C71E1D094D00141902 /* SDPieLoopProgressView.h */,
-				084638C81E1D094D00141902 /* SDPieLoopProgressView.m */,
-				084638C91E1D094D00141902 /* SDPieProgressView.h */,
-				084638CA1E1D094D00141902 /* SDPieProgressView.m */,
-				084638CB1E1D094D00141902 /* SDProgressView.h */,
-				084638CC1E1D094D00141902 /* SDRotationLoopProgressView.h */,
-				084638CD1E1D094D00141902 /* SDRotationLoopProgressView.m */,
-				084638CE1E1D094D00141902 /* SDTransparentPieProgressView.h */,
-				084638CF1E1D094D00141902 /* SDTransparentPieProgressView.m */,
-			);
-			path = SDProgressView;
 			sourceTree = "<group>";
 		};
 		0864744E1DF5411700072CB1 /* Model */ = {
@@ -281,7 +246,7 @@
 		086474691DF5479400072CB1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				084638B61E1D074000141902 /* Classes */,
+				084638B61E1D074000141902 /* PhotoBrowser */,
 				086474971DF556A400072CB1 /* HLAccountManger.h */,
 				086474981DF556A400072CB1 /* HLAccountManger.m */,
 				086474941DF5483700072CB1 /* HLAudioTool.h */,
@@ -433,6 +398,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C0D64EC41E4EABD500C91851 /* ptotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C0D64EC51E4EABD500C91851 /* HZPhotoBrowser.h */,
+				C0D64EC61E4EABD500C91851 /* HZPhotoBrowser.m */,
+				C0D64EC71E4EABD500C91851 /* HZPhotoBrowserConfig.h */,
+				C0D64EC81E4EABD500C91851 /* HZPhotoBrowserView.h */,
+				C0D64EC91E4EABD500C91851 /* HZPhotoBrowserView.m */,
+				C0D64ECA1E4EABD500C91851 /* HZPhotoGroup.h */,
+				C0D64ECB1E4EABD500C91851 /* HZPhotoGroup.m */,
+				C0D64ECC1E4EABD500C91851 /* HZPhotoItem.h */,
+				C0D64ECD1E4EABD500C91851 /* HZPhotoItem.m */,
+				C0D64ECE1E4EABD500C91851 /* HZWaitingView.h */,
+				C0D64ECF1E4EABD500C91851 /* HZWaitingView.m */,
+				C0D64ED01E4EABD500C91851 /* whiteplaceholder.png */,
+			);
+			path = ptotoBrowser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -523,6 +507,7 @@
 				C054DC4319FE9AEE00C82E36 /* Images.xcassets in Resources */,
 				08AC91481E09405300F3E083 /* Internet Widgits Pty Ltd.cer in Resources */,
 				C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */,
+				C0D64ED61E4EABD500C91851 /* whiteplaceholder.png in Resources */,
 				C02AAFE91A80EADE0011454D /* GirlPiano.jpg in Resources */,
 				C0C5C8561A49761800449FE1 /* MainStoryboard.storyboard in Resources */,
 			);
@@ -596,33 +581,29 @@
 				086474811DF547D600072CB1 /* UIImage+MJ.m in Sources */,
 				0864748D1DF5481A00072CB1 /* HLHttpClient.m in Sources */,
 				C054DC7819FE9B7D00C82E36 /* piano.m in Sources */,
-				084638D21E1D094D00141902 /* SDLoopProgressView.m in Sources */,
 				086474931DF5482D00072CB1 /* LZProgressView.m in Sources */,
 				C054DC7919FE9B7D00C82E36 /* pianoCell.m in Sources */,
 				C054DC3B19FE9AEE00C82E36 /* AppDelegate.m in Sources */,
-				084638D51E1D094D00141902 /* SDRotationLoopProgressView.m in Sources */,
 				086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */,
+				C0D64ED41E4EABD500C91851 /* HZPhotoItem.m in Sources */,
 				C054DC7B19FE9B7D00C82E36 /* DisplayViewController.m in Sources */,
-				084638D31E1D094D00141902 /* SDPieLoopProgressView.m in Sources */,
 				086474991DF556A400072CB1 /* HLAccountManger.m in Sources */,
+				C0D64ED11E4EABD500C91851 /* HZPhotoBrowser.m in Sources */,
 				C054DC3719FE9AEE00C82E36 /* main.m in Sources */,
 				086474871DF5480200072CB1 /* UIBarButtonItem+Extension.m in Sources */,
 				086474841DF547D600072CB1 /* UIView+Extension.m in Sources */,
-				084638BE1E1D074000141902 /* JLPhoto.m in Sources */,
 				086474961DF5483700072CB1 /* HLAudioTool.m in Sources */,
 				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,
 				086474801DF547D600072CB1 /* UIFont+HLFont.m in Sources */,
+				C0D64ED21E4EABD500C91851 /* HZPhotoBrowserView.m in Sources */,
 				C054DC7C19FE9B7D00C82E36 /* PianoDetailViewController.m in Sources */,
 				0864747F1DF547D600072CB1 /* UIColor+Help.m in Sources */,
+				C0D64ED51E4EABD500C91851 /* HZWaitingView.m in Sources */,
 				0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */,
-				084638D11E1D094D00141902 /* SDBaseProgressView.m in Sources */,
 				0864747E1DF547D600072CB1 /* NSString+size.m in Sources */,
-				084638D01E1D094D00141902 /* SDBallProgressView.m in Sources */,
-				084638D61E1D094D00141902 /* SDTransparentPieProgressView.m in Sources */,
-				084638D41E1D094D00141902 /* SDPieProgressView.m in Sources */,
 				086474821DF547D600072CB1 /* UILabel+StringFrame.m in Sources */,
+				C0D64ED31E4EABD500C91851 /* HZPhotoGroup.m in Sources */,
 				086474901DF5482500072CB1 /* SBFMDBTool.m in Sources */,
-				084638BF1E1D074000141902 /* JLPhotoBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

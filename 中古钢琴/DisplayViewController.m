@@ -16,14 +16,17 @@
 
 #import "UIImageView+WebCache.h"
 #import "SDImageCache.h"
-#import "JLPhotoBrowser.h"
+#import "HZPhotoBrowser.h"
+#import "HZPhotoGroup.h"
+#import "HZPhotoItem.h"
 
 
 
-@interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, HLPictureScrollViewDelegte>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@interface DisplayViewController ()<UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, HLPictureScrollViewDelegte,HZPhotoBrowserDelegate>
+
+//@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSArray *newses;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+//@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic, strong) NSMutableArray *pianosA;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -371,36 +374,28 @@
 
 #pragma mark -  Picture Delegate
 -(void)pictureScrollImageViewDidTap:(int)index {
-    NSMutableArray *photos = [NSMutableArray array];
-    
-    for (int i=0; i<self.imagesUrls.count; i++) {
-        
-//        UIImageView *child = self.imageViews[i];
-        UIImageView *child = [[UIImageView alloc] init];
-        NSURL *url = [NSURL URLWithString:self.imagesUrls[index]];
-        [child sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"piano1"]];
-        //1.创建photo模型
-        JLPhoto *photo = [[JLPhoto alloc] init];
-        //2.原始imageView
-        photo.sourceImageView = child;
-        //3.要放大图片的url
-        photo.bigImgUrl = self.imagesUrls[i];
-        //标志
-        photo.tag = i;
-        
-        [photos addObject:photo];
-        
-    }
-    
-    //1.创建图片浏览器
-    JLPhotoBrowser *photoBrowser = [[JLPhotoBrowser alloc] init];
-    //2.获取photo数组
-    photoBrowser.photos = photos;
-    //3.当前要显示的图片
-    photoBrowser.currentIndex = index;
-    [photoBrowser show];
+    //启动图片浏览器
+    HZPhotoBrowser *browser = [[HZPhotoBrowser alloc] init];
+    browser.sourceImagesContainerView = self.slideView; // 原图的父控件
+    browser.imageCount = self.imagesUrls.count; // 图片总数
+    browser.currentImageIndex = index;
+    browser.delegate = self;
+    [browser show];
+ 
 }
 
 
+- (UIImage *)photoBrowser:(HZPhotoBrowser *)browser placeholderImageForIndex:(NSInteger)index {
+    UIImage *image = [UIImage imageNamed:@"piano1"];
+    return image;
+}
+
+
+- (NSURL *)photoBrowser:(HZPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index {
+    
+    NSString *str =  self.imagesUrls[index];
+    NSURL *url = [NSURL URLWithString:str];
+    return url;
+}
 
 @end
