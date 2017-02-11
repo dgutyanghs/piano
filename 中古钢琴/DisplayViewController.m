@@ -167,12 +167,6 @@
 
 }
 
-#pragma mark 开始进入刷新状态
-- (void)headerRerfeshing
-{
-
-
-}
 
 /**
  *  显示下载了多少条数据
@@ -376,7 +370,8 @@
 -(void)pictureScrollImageViewDidTap:(int)index {
     //启动图片浏览器
     HZPhotoBrowser *browser = [[HZPhotoBrowser alloc] init];
-    browser.sourceImagesContainerView = self.slideView; // 原图的父控件
+//    browser.sourceImagesContainerView = self.slideView.scrollView; // 原图的父控件
+    browser.sourceImagesContainerView = nil; // 原图的父控件
     browser.imageCount = self.imagesUrls.count; // 图片总数
     browser.currentImageIndex = index;
     browser.delegate = self;
@@ -386,7 +381,7 @@
 
 
 - (UIImage *)photoBrowser:(HZPhotoBrowser *)browser placeholderImageForIndex:(NSInteger)index {
-    UIImage *image = [UIImage imageNamed:@"piano1"];
+    UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:self.imagesUrls[index]];
     return image;
 }
 
