@@ -57,7 +57,7 @@
 		</dict>
 	</dict>
 	<key>UIMainStoryboardFile</key>
-	<string>MainIpad</string>
+	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

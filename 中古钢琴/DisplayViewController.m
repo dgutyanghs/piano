@@ -10,8 +10,6 @@
 #import "piano.h"
 #import "pianoCell.h"
 #import "PianoDetailViewController.h"
-#import "MJNews.h"
-#import "MJNewsCell.h"
 #import "MJExtension.h"
 #import "UIImage+MJ.h"
 #import "HLPictureScrollView.h"
@@ -45,14 +43,6 @@
 
 @implementation DisplayViewController
 
--(NSArray *)newses
-{
-    if (!_newses) {
-        self.newses = [MJNews mj_objectArrayWithFilename:@"newses_yang.plist"];
-//        self.newses = [MJNews objectArrayWithFilename:@"newses.plist"];
-    }
-    return _newses;
-}
 
 - (void)viewDidLoad
 {
@@ -380,28 +370,6 @@
     
 }
 
-#pragma mark - collectionview
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return self.newses.count * 1000;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *ID = @"news";
-    MJNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    NSLog(@"collection cell %f, %f", cell.bounds.size.width, cell.bounds.size.height);
-//    NSLog(@"index = %li", (long)indexPath.item);
-    cell.news = self.newses[indexPath.item % self.newses.count];
-    self.pageControl.currentPage = [cell.news.index integerValue];
-    
-    return cell;
-}
 
 
 -(UIStatusBarStyle)preferredStatusBarStyle

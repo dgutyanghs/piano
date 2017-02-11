@@ -7,7 +7,6 @@
 //
 
 #import "PianoDetailViewController.h"
-#import "SearchViewController.h"
 #import "piano.h"
 
 @interface PianoDetailViewController ()
@@ -86,20 +85,6 @@
 
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier  isEqualToString:@"location"]) {
-//        NSLog(@"go to location");
-    }else {
-        UIButton *btn = sender;
-
-        SearchViewController * search = segue.destinationViewController;
-        search.pianoDetail = self.pianoDetail;
-        search.btnNo    = btn.tag;
-    }
-}
-
-
 #pragma mark - TableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -141,15 +126,16 @@
 }
 
 - (IBAction)inforBtnOnClicked:(UIBarButtonItem *)sender {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"中古钢琴" message:@"感谢大家的支持，如有问题请联系:\nyanghs.dgut@163.com" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"中古钢琴大全" message:@"感谢大家的支持，如有问题请联系:\ndgutyang@gmail.com" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     
     [alert show];
 
 }
+
 - (IBAction)ShareOnClick:(UIButton *)sender {
 
-    UIImage * imageScreen = [self imageFromView:self.view];
-    NSString * content = [NSString stringWithFormat:@"来自App'中古钢琴'：品牌：%@  型号：%@\n", self.pianoDetail.logo, self.pianoDetail.model];
+//    UIImage * imageScreen = [self imageFromView:self.view];
+//    NSString * content = [NSString stringWithFormat:@"来自App'中古钢琴'：品牌：%@  型号：%@\n", self.pianoDetail.logo, self.pianoDetail.model];
 }
 
 
