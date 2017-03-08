@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082E7EA51E6FB5D900C45EAC /* AYTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EA41E6FB5D900C45EAC /* AYTabBarViewController.m */; };
+		082E7EA81E6FB75800C45EAC /* AYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */; };
+		082E7EAB1E6FBE1500C45EAC /* AYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */; };
 		084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638A61E1CCB3B00141902 /* HLPictureScrollView.m */; };
 		0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */; };
 		086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474521DF5471400072CB1 /* HLMainNavigationController.m */; };
@@ -76,6 +79,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082E7EA31E6FB5D900C45EAC /* AYTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYTabBarViewController.h; sourceTree = "<group>"; };
+		082E7EA41E6FB5D900C45EAC /* AYTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTabBarViewController.m; sourceTree = "<group>"; };
+		082E7EA61E6FB75800C45EAC /* AYNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYNavigationViewController.h; sourceTree = "<group>"; };
+		082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYNavigationViewController.m; sourceTree = "<group>"; };
+		082E7EA91E6FBE1500C45EAC /* AYVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYVideoViewController.h; sourceTree = "<group>"; };
+		082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYVideoViewController.m; sourceTree = "<group>"; };
 		084638A51E1CCB3B00141902 /* HLPictureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPictureScrollView.h; sourceTree = "<group>"; };
 		084638A61E1CCB3B00141902 /* HLPictureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPictureScrollView.m; sourceTree = "<group>"; };
 		0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexPianoDataBase.sqlite; sourceTree = "<group>"; };
@@ -233,12 +242,18 @@
 		086474501DF5447400072CB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				082E7EA31E6FB5D900C45EAC /* AYTabBarViewController.h */,
+				082E7EA41E6FB5D900C45EAC /* AYTabBarViewController.m */,
 				086474511DF5471400072CB1 /* HLMainNavigationController.h */,
 				086474521DF5471400072CB1 /* HLMainNavigationController.m */,
 				C054DC7219FE9B7D00C82E36 /* DisplayViewController.h */,
 				C054DC7319FE9B7D00C82E36 /* DisplayViewController.m */,
 				C054DC7419FE9B7D00C82E36 /* PianoDetailViewController.h */,
 				C054DC7519FE9B7D00C82E36 /* PianoDetailViewController.m */,
+				082E7EA61E6FB75800C45EAC /* AYNavigationViewController.h */,
+				082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */,
+				082E7EA91E6FBE1500C45EAC /* AYVideoViewController.h */,
+				082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -576,9 +591,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082E7EA51E6FB5D900C45EAC /* AYTabBarViewController.m in Sources */,
 				084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */,
 				0864748A1DF5480E00072CB1 /* ISMessages+Alex.m in Sources */,
 				086474811DF547D600072CB1 /* UIImage+MJ.m in Sources */,
+				082E7EAB1E6FBE1500C45EAC /* AYVideoViewController.m in Sources */,
+				082E7EA81E6FB75800C45EAC /* AYNavigationViewController.m in Sources */,
 				0864748D1DF5481A00072CB1 /* HLHttpClient.m in Sources */,
 				C054DC7819FE9B7D00C82E36 /* piano.m in Sources */,
 				086474931DF5482D00072CB1 /* LZProgressView.m in Sources */,
