@@ -30,6 +30,7 @@
 		086474991DF556A400072CB1 /* HLAccountManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474981DF556A400072CB1 /* HLAccountManger.m */; };
 		08AC91461E092A6C00F3E083 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08AC91451E092A6C00F3E083 /* Default-568h@2x.png */; };
 		08AC91481E09405300F3E083 /* Internet Widgits Pty Ltd.cer in Resources */ = {isa = PBXBuildFile; fileRef = 08AC91471E09405300F3E083 /* Internet Widgits Pty Ltd.cer */; };
+		08EE6B341E7FE45D001565C5 /* AYPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */; };
 		A311BF3069DCF1C947FB1D4C /* libPods-UsedPiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B358400DA895ACED4EDD76AC /* libPods-UsedPiano.a */; };
 		C02AAFE91A80EADE0011454D /* GirlPiano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFE81A80EADE0011454D /* GirlPiano.jpg */; };
 		C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFEE1A80F0540011454D /* girlPiano2.jpg */; };
@@ -122,6 +123,8 @@
 		086474981DF556A400072CB1 /* HLAccountManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAccountManger.m; sourceTree = "<group>"; };
 		08AC91451E092A6C00F3E083 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		08AC91471E09405300F3E083 /* Internet Widgits Pty Ltd.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Internet Widgits Pty Ltd.cer"; sourceTree = "<group>"; };
+		08EE6B321E7FE45D001565C5 /* AYPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYPlayViewController.h; sourceTree = "<group>"; };
+		08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYPlayViewController.m; sourceTree = "<group>"; };
 		726D1E79A3907F19EF67C2DC /* Pods-UsedPiano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsedPiano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UsedPiano/Pods-UsedPiano.debug.xcconfig"; sourceTree = "<group>"; };
 		B358400DA895ACED4EDD76AC /* libPods-UsedPiano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UsedPiano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02AAFE81A80EADE0011454D /* GirlPiano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = GirlPiano.jpg; path = AppIcon/GirlPiano.jpg; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */,
 				082E7EA91E6FBE1500C45EAC /* AYVideoViewController.h */,
 				082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */,
+				08EE6B321E7FE45D001565C5 /* AYPlayViewController.h */,
+				08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EE6B341E7FE45D001565C5 /* AYPlayViewController.m in Sources */,
 				082E7EA51E6FB5D900C45EAC /* AYTabBarViewController.m in Sources */,
 				084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */,
 				0864748A1DF5480E00072CB1 /* ISMessages+Alex.m in Sources */,
