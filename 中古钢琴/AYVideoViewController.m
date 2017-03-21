@@ -49,7 +49,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AYPlayViewController *playVC = [[AYPlayViewController alloc] init];
-    [self.navigationController pushViewController:playVC animated:YES];
+//    [self.navigationController pushViewController:playVC animated:YES];
+    [self presentViewController:playVC animated:YES completion:nil];
     
 }
 

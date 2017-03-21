@@ -11,6 +11,7 @@
 		082E7EA81E6FB75800C45EAC /* AYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */; };
 		082E7EAB1E6FBE1500C45EAC /* AYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */; };
 		084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638A61E1CCB3B00141902 /* HLPictureScrollView.m */; };
+		085FAFDD1E810E8B00A3F53E /* AYWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 085FAFDC1E810E8B00A3F53E /* AYWebView.m */; };
 		0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */; };
 		086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474521DF5471400072CB1 /* HLMainNavigationController.m */; };
 		0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864746D1DF547D600072CB1 /* NSString+Password.m */; };
@@ -88,6 +89,8 @@
 		082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYVideoViewController.m; sourceTree = "<group>"; };
 		084638A51E1CCB3B00141902 /* HLPictureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPictureScrollView.h; sourceTree = "<group>"; };
 		084638A61E1CCB3B00141902 /* HLPictureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPictureScrollView.m; sourceTree = "<group>"; };
+		085FAFDB1E810E8B00A3F53E /* AYWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYWebView.h; sourceTree = "<group>"; };
+		085FAFDC1E810E8B00A3F53E /* AYWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYWebView.m; sourceTree = "<group>"; };
 		0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexPianoDataBase.sqlite; sourceTree = "<group>"; };
 		086474511DF5471400072CB1 /* HLMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLMainNavigationController.h; sourceTree = "<group>"; };
 		086474521DF5471400072CB1 /* HLMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLMainNavigationController.m; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				084638A61E1CCB3B00141902 /* HLPictureScrollView.m */,
 				C054DC6F19FE9B7D00C82E36 /* pianoCell.h */,
 				C054DC7019FE9B7D00C82E36 /* pianoCell.m */,
+				085FAFDB1E810E8B00A3F53E /* AYWebView.h */,
+				085FAFDC1E810E8B00A3F53E /* AYWebView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				C0D64ED11E4EABD500C91851 /* HZPhotoBrowser.m in Sources */,
 				C054DC3719FE9AEE00C82E36 /* main.m in Sources */,
 				086474871DF5480200072CB1 /* UIBarButtonItem+Extension.m in Sources */,
+				085FAFDD1E810E8B00A3F53E /* AYWebView.m in Sources */,
 				086474841DF547D600072CB1 /* UIView+Extension.m in Sources */,
 				086474961DF5483700072CB1 /* HLAudioTool.m in Sources */,
 				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,

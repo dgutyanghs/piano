@@ -8,9 +8,10 @@
 
 #import "AYPlayViewController.h"
 #import <WebKit/WebKit.h>
+#import "AYWebView.h"
 
 @interface AYPlayViewController () <WKNavigationDelegate>
-@property (nonatomic, weak) WKWebView *webView;
+@property (nonatomic, weak) AYWebView *webView;
 @end
 
 @implementation AYPlayViewController
@@ -19,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self initialWebView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +29,7 @@
 }
 
 - (void)initialWebView {
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.frame];
+    AYWebView *webView = [[AYWebView alloc] initWithFrame:self.view.frame];
     self.webView = webView;
     _webView.navigationDelegate = self;
     NSURL *url = [NSURL URLWithString:@"http://120.25.207.78:8080/vod/nhk_piano.m3u8"];
@@ -36,7 +38,17 @@
     
     [_webView loadRequest:request];
     [self.view addSubview:_webView];
+    
+    UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView)];
+    [self.webView addGestureRecognizer:longTap];
 }
+
+
+- (void)dismissView {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -46,5 +58,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskLandscape;
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationLandscapeLeft;
+//}
+
+
 
 @end

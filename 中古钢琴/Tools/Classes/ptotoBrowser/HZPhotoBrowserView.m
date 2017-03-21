@@ -82,7 +82,6 @@
 #pragma mark 双击
 - (void)handleDoubleTap:(UITapGestureRecognizer *)recognizer
 {
-    
     //图片加载完之后才能响应双击放大
     if (!self.hasLoadedImage) {
         return;
