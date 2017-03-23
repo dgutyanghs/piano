@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08012CA01E83C24900E925CD /* ImageResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08012C9A1E83C24900E925CD /* ImageResources.bundle */; };
+		08012CA11E83C24900E925CD /* XLSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 08012C9D1E83C24900E925CD /* XLSlider.m */; };
+		08012CA21E83C24900E925CD /* XLVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08012C9F1E83C24900E925CD /* XLVideoPlayer.m */; };
+		08012CA71E83C25400E925CD /* XLVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08012CA51E83C25400E925CD /* XLVideoCell.m */; };
+		08012CA81E83C25400E925CD /* XLVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08012CA61E83C25400E925CD /* XLVideoCell.xib */; };
+		08012CAC1E83C63200E925CD /* XLVideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 08012CAB1E83C63200E925CD /* XLVideoItem.m */; };
+		08012CAF1E83C9BB00E925CD /* AYVideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08012CAE1E83C9BB00E925CD /* AYVideoPlayViewController.m */; };
 		082E7EA51E6FB5D900C45EAC /* AYTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EA41E6FB5D900C45EAC /* AYTabBarViewController.m */; };
 		082E7EA81E6FB75800C45EAC /* AYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */; };
 		082E7EAB1E6FBE1500C45EAC /* AYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */; };
@@ -81,6 +88,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08012C9A1E83C24900E925CD /* ImageResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageResources.bundle; sourceTree = "<group>"; };
+		08012C9C1E83C24900E925CD /* XLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLSlider.h; sourceTree = "<group>"; };
+		08012C9D1E83C24900E925CD /* XLSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLSlider.m; sourceTree = "<group>"; };
+		08012C9E1E83C24900E925CD /* XLVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLVideoPlayer.h; sourceTree = "<group>"; };
+		08012C9F1E83C24900E925CD /* XLVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLVideoPlayer.m; sourceTree = "<group>"; };
+		08012CA41E83C25400E925CD /* XLVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLVideoCell.h; sourceTree = "<group>"; };
+		08012CA51E83C25400E925CD /* XLVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLVideoCell.m; sourceTree = "<group>"; };
+		08012CA61E83C25400E925CD /* XLVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XLVideoCell.xib; sourceTree = "<group>"; };
+		08012CAA1E83C63200E925CD /* XLVideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLVideoItem.h; sourceTree = "<group>"; };
+		08012CAB1E83C63200E925CD /* XLVideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLVideoItem.m; sourceTree = "<group>"; };
+		08012CAD1E83C9BB00E925CD /* AYVideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYVideoPlayViewController.h; sourceTree = "<group>"; };
+		08012CAE1E83C9BB00E925CD /* AYVideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYVideoPlayViewController.m; sourceTree = "<group>"; };
 		082E7EA31E6FB5D900C45EAC /* AYTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYTabBarViewController.h; sourceTree = "<group>"; };
 		082E7EA41E6FB5D900C45EAC /* AYTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYTabBarViewController.m; sourceTree = "<group>"; };
 		082E7EA61E6FB75800C45EAC /* AYNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYNavigationViewController.h; sourceTree = "<group>"; };
@@ -216,6 +235,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08012C991E83C24900E925CD /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				08012C9A1E83C24900E925CD /* ImageResources.bundle */,
+				08012C9B1E83C24900E925CD /* Slider */,
+				08012C9E1E83C24900E925CD /* XLVideoPlayer.h */,
+				08012C9F1E83C24900E925CD /* XLVideoPlayer.m */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		08012C9B1E83C24900E925CD /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				08012C9C1E83C24900E925CD /* XLSlider.h */,
+				08012C9D1E83C24900E925CD /* XLSlider.m */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		08012CA31E83C25400E925CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08012CA41E83C25400E925CD /* XLVideoCell.h */,
+				08012CA51E83C25400E925CD /* XLVideoCell.m */,
+				08012CA61E83C25400E925CD /* XLVideoCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08012CA91E83C63200E925CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				08012CAA1E83C63200E925CD /* XLVideoItem.h */,
+				08012CAB1E83C63200E925CD /* XLVideoItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		084638B61E1D074000141902 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +322,8 @@
 				082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */,
 				08EE6B321E7FE45D001565C5 /* AYPlayViewController.h */,
 				08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */,
+				08012CAD1E83C9BB00E925CD /* AYVideoPlayViewController.h */,
+				08012CAE1E83C9BB00E925CD /* AYVideoPlayViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,6 +331,9 @@
 		086474691DF5479400072CB1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				08012CA91E83C63200E925CD /* Model */,
+				08012CA31E83C25400E925CD /* View */,
+				08012C991E83C24900E925CD /* VideoPlayer */,
 				084638B61E1D074000141902 /* PhotoBrowser */,
 				086474971DF556A400072CB1 /* HLAccountManger.h */,
 				086474981DF556A400072CB1 /* HLAccountManger.m */,
@@ -529,12 +592,14 @@
 				0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */,
 				C0C8938F1A00EDC0001BE1F0 /* piano_detail.plist in Resources */,
 				08AC91461E092A6C00F3E083 /* Default-568h@2x.png in Resources */,
+				08012CA01E83C24900E925CD /* ImageResources.bundle in Resources */,
 				C054DC4319FE9AEE00C82E36 /* Images.xcassets in Resources */,
 				08AC91481E09405300F3E083 /* Internet Widgits Pty Ltd.cer in Resources */,
 				C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */,
 				C0D64ED61E4EABD500C91851 /* whiteplaceholder.png in Resources */,
 				C02AAFE91A80EADE0011454D /* GirlPiano.jpg in Resources */,
 				C0C5C8561A49761800449FE1 /* MainStoryboard.storyboard in Resources */,
+				08012CA81E83C25400E925CD /* XLVideoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08EE6B341E7FE45D001565C5 /* AYPlayViewController.m in Sources */,
+				08012CA21E83C24900E925CD /* XLVideoPlayer.m in Sources */,
 				082E7EA51E6FB5D900C45EAC /* AYTabBarViewController.m in Sources */,
 				084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */,
 				0864748A1DF5480E00072CB1 /* ISMessages+Alex.m in Sources */,
@@ -610,11 +676,14 @@
 				082E7EA81E6FB75800C45EAC /* AYNavigationViewController.m in Sources */,
 				0864748D1DF5481A00072CB1 /* HLHttpClient.m in Sources */,
 				C054DC7819FE9B7D00C82E36 /* piano.m in Sources */,
+				08012CAC1E83C63200E925CD /* XLVideoItem.m in Sources */,
 				086474931DF5482D00072CB1 /* LZProgressView.m in Sources */,
 				C054DC7919FE9B7D00C82E36 /* pianoCell.m in Sources */,
 				C054DC3B19FE9AEE00C82E36 /* AppDelegate.m in Sources */,
 				086474531DF5471400072CB1 /* HLMainNavigationController.m in Sources */,
 				C0D64ED41E4EABD500C91851 /* HZPhotoItem.m in Sources */,
+				08012CAF1E83C9BB00E925CD /* AYVideoPlayViewController.m in Sources */,
+				08012CA71E83C25400E925CD /* XLVideoCell.m in Sources */,
 				C054DC7B19FE9B7D00C82E36 /* DisplayViewController.m in Sources */,
 				086474991DF556A400072CB1 /* HLAccountManger.m in Sources */,
 				C0D64ED11E4EABD500C91851 /* HZPhotoBrowser.m in Sources */,
@@ -623,6 +692,7 @@
 				085FAFDD1E810E8B00A3F53E /* AYWebView.m in Sources */,
 				086474841DF547D600072CB1 /* UIView+Extension.m in Sources */,
 				086474961DF5483700072CB1 /* HLAudioTool.m in Sources */,
+				08012CA11E83C24900E925CD /* XLSlider.m in Sources */,
 				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,
 				086474801DF547D600072CB1 /* UIFont+HLFont.m in Sources */,
 				C0D64ED21E4EABD500C91851 /* HZPhotoBrowserView.m in Sources */,

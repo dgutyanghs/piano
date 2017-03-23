@@ -23,7 +23,6 @@
 //    [OpenShare connectWeixinWithAppId:@"wxa1f52d5588366212"];
 //    [self initializePlat];
     
-    
     return YES;
 }
 							

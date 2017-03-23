@@ -44,8 +44,6 @@
     if (!shouldLandscape) {
         return;
     }
-//    HZPhotoBrowserView *currentView = _scrollView.subviews[self.currentImageIndex];
-//    [currentView.scrollview setZoomScale:1.0 animated:YES];//还原
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     
     CGRect screenBounds = [UIScreen mainScreen].bounds;
