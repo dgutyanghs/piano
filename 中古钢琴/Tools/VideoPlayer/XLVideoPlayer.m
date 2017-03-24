@@ -179,7 +179,9 @@ static CGFloat const playBtnSideLength = 60.0f;
 #pragma mark - Screen Orientation
 
 - (void)statusBarOrientationChange:(NSNotification *)notification {
-    if (self.smallWinPlaying) return;
+    if (self.smallWinPlaying)
+        return;
+    
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if (orientation == UIDeviceOrientationLandscapeLeft) {
 //        NSLog(@"UIDeviceOrientationLandscapeLeft");

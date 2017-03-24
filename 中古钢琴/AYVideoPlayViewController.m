@@ -36,6 +36,13 @@
     [super viewWillAppear:animated];
     
     self.player.videoUrl = self.videoItem.mp4_url;
+//typedef void (^VideoCompletedPlayingBlock) (XLVideoPlayer *videoPlayer);
+    __weak __typeof(self) weakSelf = self;
+    self.player.completedPlayingBlock = ^(XLVideoPlayer *player) {
+        [player destroyPlayer];
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+    };
+    
     [self.view addSubview:self.player];
 }
 
