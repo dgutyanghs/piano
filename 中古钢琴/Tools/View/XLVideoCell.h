@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *videoTitle;
 
 @property (nonatomic, strong) XLVideoItem *videoItem;
+@property (weak, nonatomic) IBOutlet UIImageView *playImage;
 
 + (XLVideoCell *)videoCellWithTableView:(UITableView *)tableview;
 

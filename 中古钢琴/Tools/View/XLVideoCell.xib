@@ -30,10 +30,10 @@
                             <constraint firstAttribute="width" constant="277" id="odd-Ak-Pqd"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="0.58612607758620694" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="NGA-4N-Upu">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="NGA-4N-Upu">
                         <rect key="frame" x="129" y="89" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="cGT-fj-8QW"/>
@@ -62,6 +62,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="playImage" destination="NGA-4N-Upu" id="wVK-jd-sJl"/>
                 <outlet property="videoImageView" destination="FQ2-HL-ESY" id="gim-so-eri"/>
                 <outlet property="videoTitle" destination="mjI-O5-Eo7" id="cLr-Te-ky6"/>
             </connections>

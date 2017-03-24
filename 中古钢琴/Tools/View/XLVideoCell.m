@@ -22,6 +22,8 @@
     if (!cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"XLVideoCell" owner:nil options:nil].lastObject;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.playImage setImage:[UIImage imageNamed:@"play"]];
+        cell.playImage.userInteractionEnabled = YES;
     }
     
     return cell;

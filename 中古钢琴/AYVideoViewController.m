@@ -97,7 +97,7 @@
     _player = [[XLVideoPlayer alloc] init];
     _player.videoUrl = item.mp4_url;
     [_player playerBindTableView:self.tableView currentIndexPath:_indexPath];
-    _player.frame = view.bounds;
+    _player.frame = cell.videoImageView.frame;
 
     [cell.contentView addSubview:_player];  
     
@@ -118,8 +118,10 @@
     XLVideoItem *item = self.videoArray[indexPath.row];
     cell.videoItem = item;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showVideoPlayer:)];
-    [cell.videoImageView addGestureRecognizer:tap];
-    cell.videoImageView.tag = indexPath.row + 100;
+//    [cell.videoImageView addGestureRecognizer:tap];
+//    cell.videoImageView.tag = indexPath.row + 100;
+    [cell.playImage addGestureRecognizer:tap];
+    cell.playImage.tag = indexPath.row + 100;
     return cell;
 }
 
