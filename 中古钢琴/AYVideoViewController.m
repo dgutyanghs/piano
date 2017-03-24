@@ -50,7 +50,7 @@
     XLVideoItem *item = [[XLVideoItem alloc] init];
     item.title = @"NHK纪录片<<钢琴史话>>";
     item.mp4_url = @"http://120.25.207.78:8080/vod/nhk_piano.m3u8";
-    item.cover = @"http://120.25.207.78:8080/vod/yamaha_1.jpg";
+    item.cover = @"http://120.25.207.78:8080/vod/nhk_piano.jpg";
     [self.videoArray addObject:item];
 //    [self.tableView reloadData];
 }
@@ -66,7 +66,8 @@
     [tableView configureForAutoLayout ];
     tableView.dataSource = self;
     tableView.delegate  = self;
-    tableView.estimatedRowHeight = 100;
+    tableView.estimatedRowHeight = 208;
+    tableView.rowHeight = 208;
     self.tableView = tableView;
     
     [self.view addSubview:tableView];

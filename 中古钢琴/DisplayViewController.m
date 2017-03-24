@@ -156,7 +156,6 @@
  */
 - (void)setupRefresh
 {
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRerfeshing)];
     HLHttpClient *httpClient = [HLHttpClient sharedInstance];
     [httpClient post:nil parameters:nil success:^(id responseObject) {
         
