@@ -12,6 +12,7 @@
 #import "XLVideoItem.h"
 #import "XLVideoCell.h"
 #import "AYVideoPlayViewController.h"
+#import "MJExtension.h"
 
 @interface AYVideoViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSIndexPath *_indexPath;
@@ -47,12 +48,27 @@
 
 - (void)fetchVideoListData {
     
-    XLVideoItem *item = [[XLVideoItem alloc] init];
-    item.title = @"NHK纪录片<<钢琴史话>>";
-    item.mp4_url = @"http://120.25.207.78:8080/vod/nhk_piano.m3u8";
-    item.cover = @"http://120.25.207.78:8080/vod/nhk_piano.jpg";
-    [self.videoArray addObject:item];
-//    [self.tableView reloadData];
+//    XLVideoItem *item = [[XLVideoItem alloc] init];
+//    item.title = @"NHK纪录片<<钢琴史话>>";
+//    item.mp4_url = @"http://120.25.207.78:8080/vod/nhk_piano.m3u8";
+//    item.cover = @"http://120.25.207.78:8080/vod/nhk_piano.jpg";
+//    [self.videoArray addObject:item];
+    
+    __weak typeof(self) weakSelf = self;
+    HLHttpClient *client = [HLHttpClient sharedInstance];
+    
+    [client post:@"/videoinfo" parameters:nil success:^(NSDictionary * responseObject) {
+        NSLog(@"videoinfo:%@", responseObject.debugDescription);
+        NSArray *videolist = responseObject[@"videoslist"];
+        if (videolist.count) {
+            _videoArray = [XLVideoItem mj_objectArrayWithKeyValuesArray:videolist];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView reloadData];
+            });
+        }
+    } fail:^(NSString *error) {
+        NSLog(@"videoinfo error:%@", error.debugDescription);
+    }];
 }
 
 - (void)viewDidLoad {
