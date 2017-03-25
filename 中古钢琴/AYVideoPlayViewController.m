@@ -1,4 +1,5 @@
 //
+
 //  AYVideoPlayViewController.m
 //  UsedPiano
 //
@@ -12,6 +13,7 @@
 
 @interface AYVideoPlayViewController ()
 @property (nonatomic, strong) XLVideoPlayer *player;
+@property (nonatomic , weak) UITextView *textView;
 @end
 
 @implementation AYVideoPlayViewController
@@ -30,6 +32,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = self.videoItem.title;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    CGFloat textY = self.player.height + self.player.y;
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, textY, ScreenWidth, ScreenHeight - textY)];
+    textView.editable = NO;
+    textView.text = _videoItem.desc;
+    textView.font = [UIFont systemFontOfSize:15.0];
+//    textView.backgroundColor = [UIColor greenColor];
+    textView.textColor = [UIColor blackColor];
+    [self.view addSubview:textView];
+    self.textView = textView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
