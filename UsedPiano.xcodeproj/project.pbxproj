@@ -39,6 +39,7 @@
 		08AC91481E09405300F3E083 /* Internet Widgits Pty Ltd.cer in Resources */ = {isa = PBXBuildFile; fileRef = 08AC91471E09405300F3E083 /* Internet Widgits Pty Ltd.cer */; };
 		08EE6B341E7FE45D001565C5 /* AYPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */; };
 		A311BF3069DCF1C947FB1D4C /* libPods-UsedPiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B358400DA895ACED4EDD76AC /* libPods-UsedPiano.a */; };
+		C021E9B91E8792CA002854FC /* AboutmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C021E9B81E8792CA002854FC /* AboutmeViewController.m */; };
 		C02AAFE91A80EADE0011454D /* GirlPiano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFE81A80EADE0011454D /* GirlPiano.jpg */; };
 		C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFEE1A80F0540011454D /* girlPiano2.jpg */; };
 		C02AAFF11A80F1B60011454D /* girlPiano3.png in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFF01A80F1B60011454D /* girlPiano3.png */; };
@@ -146,6 +147,8 @@
 		08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYPlayViewController.m; sourceTree = "<group>"; };
 		726D1E79A3907F19EF67C2DC /* Pods-UsedPiano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsedPiano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UsedPiano/Pods-UsedPiano.debug.xcconfig"; sourceTree = "<group>"; };
 		B358400DA895ACED4EDD76AC /* libPods-UsedPiano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UsedPiano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C021E9B71E8792CA002854FC /* AboutmeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutmeViewController.h; sourceTree = "<group>"; };
+		C021E9B81E8792CA002854FC /* AboutmeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutmeViewController.m; sourceTree = "<group>"; };
 		C02AAFE81A80EADE0011454D /* GirlPiano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = GirlPiano.jpg; path = AppIcon/GirlPiano.jpg; sourceTree = "<group>"; };
 		C02AAFEE1A80F0540011454D /* girlPiano2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = girlPiano2.jpg; path = AppIcon/girlPiano2.jpg; sourceTree = "<group>"; };
 		C02AAFF01A80F1B60011454D /* girlPiano3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = girlPiano3.png; path = AppIcon/girlPiano3.png; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 				08012CAE1E83C9BB00E925CD /* AYVideoPlayViewController.m */,
 				08EE6B321E7FE45D001565C5 /* AYPlayViewController.h */,
 				08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */,
+				C021E9B71E8792CA002854FC /* AboutmeViewController.h */,
+				C021E9B81E8792CA002854FC /* AboutmeViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -689,6 +694,7 @@
 				08012CA11E83C24900E925CD /* XLSlider.m in Sources */,
 				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,
 				086474801DF547D600072CB1 /* UIFont+HLFont.m in Sources */,
+				C021E9B91E8792CA002854FC /* AboutmeViewController.m in Sources */,
 				C0D64ED21E4EABD500C91851 /* HZPhotoBrowserView.m in Sources */,
 				C054DC7C19FE9B7D00C82E36 /* PianoDetailViewController.m in Sources */,
 				0864747F1DF547D600072CB1 /* UIColor+Help.m in Sources */,

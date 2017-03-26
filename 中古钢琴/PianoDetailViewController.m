@@ -40,6 +40,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    self.navigationController.navigationBar.hidden = NO;
+    //disable "关于' button
+    
     self.tableView.dataSource   = self;
     self.tableView.delegate     = self;
     self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
@@ -126,9 +128,9 @@
 }
 
 - (IBAction)inforBtnOnClicked:(UIBarButtonItem *)sender {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"中古钢琴大全" message:@"感谢大家的支持，如有问题请联系:\ndgutyang@gmail.com" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"中古钢琴大全" message:@"感谢大家的支持，如有问题请联系:\ndgutyang@gmail.com" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//    
+//    [alert show];
 
 }
 
