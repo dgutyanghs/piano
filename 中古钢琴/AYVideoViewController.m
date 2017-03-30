@@ -13,6 +13,8 @@
 #import "XLVideoCell.h"
 #import "AYVideoPlayViewController.h"
 #import "MJExtension.h"
+#import "SURefreshHeader.h"
+#import "ISMessages+Alex.h"
 
 @interface AYVideoViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSIndexPath *_indexPath;
@@ -48,12 +50,6 @@
 
 - (void)fetchVideoListData {
     
-//    XLVideoItem *item = [[XLVideoItem alloc] init];
-//    item.title = @"NHK纪录片<<钢琴史话>>";
-//    item.mp4_url = @"http://120.25.207.78:8080/vod/nhk_piano.m3u8";
-//    item.cover = @"http://120.25.207.78:8080/vod/nhk_piano.jpg";
-//    [self.videoArray addObject:item];
-    
     __weak typeof(self) weakSelf = self;
     HLHttpClient *client = [HLHttpClient sharedInstance];
     
@@ -64,10 +60,16 @@
             _videoArray = [XLVideoItem mj_objectArrayWithKeyValuesArray:videolist];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.tableView reloadData];
+                [weakSelf.tableView.header endRefreshing];
             });
         }
+        
     } fail:^(NSString *error) {
         NSLog(@"videoinfo error:%@", error.debugDescription);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [ISMessages showErrorMsg:@"网络不通" title:@"请稍后再试"];
+            [weakSelf.tableView.header endRefreshing];
+        });
     }];
 }
 
@@ -78,20 +80,26 @@
     
     [self fetchVideoListData];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    [tableView configureForAutoLayout ];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
+//    [tableView configureForAutoLayout ];
     tableView.dataSource = self;
     tableView.delegate  = self;
     tableView.estimatedRowHeight = 208;
     tableView.rowHeight = 208;
+    
+    __weak __typeof(self) weakSelf = self;
+    [tableView addRefreshHeaderWithHandle:^{
+        NSLog(@"add refresh header");
+        [weakSelf fetchVideoListData];
+    }];
     self.tableView = tableView;
     
     [self.view addSubview:tableView];
     
-    
-    [tableView autoPinEdgesToSuperviewEdges];
-    
+//    [tableView autoPinEdgesToSuperviewEdges];
+     
 }
+
 
 
 - (void)didReceiveMemoryWarning {

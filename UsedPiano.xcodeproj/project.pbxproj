@@ -18,6 +18,9 @@
 		082E7EA81E6FB75800C45EAC /* AYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EA71E6FB75800C45EAC /* AYNavigationViewController.m */; };
 		082E7EAB1E6FBE1500C45EAC /* AYVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */; };
 		084638A71E1CCB3B00141902 /* HLPictureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084638A61E1CCB3B00141902 /* HLPictureScrollView.m */; };
+		084C2ADA1E8B5A5A00402F8A /* SURefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 084C2AD51E8B5A5A00402F8A /* SURefreshHeader.m */; };
+		084C2ADB1E8B5A5A00402F8A /* UIScrollView+SURefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 084C2AD71E8B5A5A00402F8A /* UIScrollView+SURefresh.m */; };
+		084C2ADC1E8B5A5A00402F8A /* UIView+SURefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 084C2AD91E8B5A5A00402F8A /* UIView+SURefresh.m */; };
 		085FAFDD1E810E8B00A3F53E /* AYWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 085FAFDC1E810E8B00A3F53E /* AYWebView.m */; };
 		0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */; };
 		0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864746D1DF547D600072CB1 /* NSString+Password.m */; };
@@ -108,6 +111,12 @@
 		082E7EAA1E6FBE1500C45EAC /* AYVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYVideoViewController.m; sourceTree = "<group>"; };
 		084638A51E1CCB3B00141902 /* HLPictureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPictureScrollView.h; sourceTree = "<group>"; };
 		084638A61E1CCB3B00141902 /* HLPictureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPictureScrollView.m; sourceTree = "<group>"; };
+		084C2AD41E8B5A5A00402F8A /* SURefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SURefreshHeader.h; sourceTree = "<group>"; };
+		084C2AD51E8B5A5A00402F8A /* SURefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SURefreshHeader.m; sourceTree = "<group>"; };
+		084C2AD61E8B5A5A00402F8A /* UIScrollView+SURefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SURefresh.h"; sourceTree = "<group>"; };
+		084C2AD71E8B5A5A00402F8A /* UIScrollView+SURefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SURefresh.m"; sourceTree = "<group>"; };
+		084C2AD81E8B5A5A00402F8A /* UIView+SURefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SURefresh.h"; sourceTree = "<group>"; };
+		084C2AD91E8B5A5A00402F8A /* UIView+SURefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SURefresh.m"; sourceTree = "<group>"; };
 		085FAFDB1E810E8B00A3F53E /* AYWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYWebView.h; sourceTree = "<group>"; };
 		085FAFDC1E810E8B00A3F53E /* AYWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYWebView.m; sourceTree = "<group>"; };
 		0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexPianoDataBase.sqlite; sourceTree = "<group>"; };
@@ -283,6 +292,19 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		084C2AD31E8B5A5A00402F8A /* SURefresh */ = {
+			isa = PBXGroup;
+			children = (
+				084C2AD41E8B5A5A00402F8A /* SURefreshHeader.h */,
+				084C2AD51E8B5A5A00402F8A /* SURefreshHeader.m */,
+				084C2AD61E8B5A5A00402F8A /* UIScrollView+SURefresh.h */,
+				084C2AD71E8B5A5A00402F8A /* UIScrollView+SURefresh.m */,
+				084C2AD81E8B5A5A00402F8A /* UIView+SURefresh.h */,
+				084C2AD91E8B5A5A00402F8A /* UIView+SURefresh.m */,
+			);
+			path = SURefresh;
+			sourceTree = "<group>";
+		};
 		0864744E1DF5411700072CB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +353,7 @@
 		086474691DF5479400072CB1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				084C2AD31E8B5A5A00402F8A /* SURefresh */,
 				08012CA91E83C63200E925CD /* Model */,
 				08012CA31E83C25400E925CD /* View */,
 				08012C991E83C24900E925CD /* VideoPlayer */,
@@ -688,8 +711,10 @@
 				C0D64ED11E4EABD500C91851 /* HZPhotoBrowser.m in Sources */,
 				C054DC3719FE9AEE00C82E36 /* main.m in Sources */,
 				086474871DF5480200072CB1 /* UIBarButtonItem+Extension.m in Sources */,
+				084C2ADA1E8B5A5A00402F8A /* SURefreshHeader.m in Sources */,
 				085FAFDD1E810E8B00A3F53E /* AYWebView.m in Sources */,
 				086474841DF547D600072CB1 /* UIView+Extension.m in Sources */,
+				084C2ADC1E8B5A5A00402F8A /* UIView+SURefresh.m in Sources */,
 				086474961DF5483700072CB1 /* HLAudioTool.m in Sources */,
 				08012CA11E83C24900E925CD /* XLSlider.m in Sources */,
 				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,
@@ -702,6 +727,7 @@
 				0864747D1DF547D600072CB1 /* NSString+Password.m in Sources */,
 				0864747E1DF547D600072CB1 /* NSString+size.m in Sources */,
 				086474821DF547D600072CB1 /* UILabel+StringFrame.m in Sources */,
+				084C2ADB1E8B5A5A00402F8A /* UIScrollView+SURefresh.m in Sources */,
 				C0D64ED31E4EABD500C91851 /* HZPhotoGroup.m in Sources */,
 				086474901DF5482500072CB1 /* SBFMDBTool.m in Sources */,
 			);
