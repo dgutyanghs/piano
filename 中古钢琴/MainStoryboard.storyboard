@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qdb-Ae-iC5">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qdb-Ae-iC5">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="56" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Adi-T2-hAG" id="Dhl-Fo-9Ix">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MW7-r8-IhA">
@@ -130,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wYm-Da-Zl1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="RmJ-oQ-Qgl" id="yfD-Rb-1Ro"/>
@@ -141,9 +141,9 @@
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wYm-Da-Zl1" firstAttribute="top" secondItem="mZo-D7-7dE" secondAttribute="top" id="0rK-RF-JY0"/>
+                            <constraint firstAttribute="bottom" secondItem="wYm-Da-Zl1" secondAttribute="bottom" id="DPA-U9-wze"/>
                             <constraint firstItem="wYm-Da-Zl1" firstAttribute="leading" secondItem="mZo-D7-7dE" secondAttribute="leading" id="Gvh-xb-fkb"/>
                             <constraint firstAttribute="trailing" secondItem="wYm-Da-Zl1" secondAttribute="trailing" id="Uvn-zh-tKs"/>
-                            <constraint firstItem="wYm-Da-Zl1" firstAttribute="bottom" secondItem="sla-cJ-M7d" secondAttribute="top" id="tdQ-5h-rBG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="钢琴型号详情" id="oMw-6I-CWv">
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDY-4U-U2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="-639"/>
+            <point key="canvasLocation" x="1083.75" y="-639.08450704225356"/>
         </scene>
         <!--钢琴-->
         <scene sceneID="6sq-mC-mkZ">
@@ -261,7 +261,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email: dgutyang@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USx-Fm-Ro9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USx-Fm-Ro9">
                                 <rect key="frame" x="16" y="465" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="QCv-oG-tN1"/>
@@ -270,8 +270,8 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ifu-4m-osx">
-                                <rect key="frame" x="118" y="105" width="85" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ifu-4m-osx">
+                                <rect key="frame" x="120.5" y="105" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="39d-8f-PDz"/>
                                     <constraint firstAttribute="width" constant="80" id="YF4-dt-V4q"/>

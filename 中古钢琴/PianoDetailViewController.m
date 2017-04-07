@@ -44,7 +44,7 @@
     
     self.tableView.dataSource   = self;
     self.tableView.delegate     = self;
-    self.tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight    = 32.0;
     self.title = [self.pianoDetail model];
     

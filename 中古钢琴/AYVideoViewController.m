@@ -80,7 +80,7 @@
     
     [self fetchVideoListData];
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight - 64) style:UITableViewStylePlain];
 //    [tableView configureForAutoLayout ];
     tableView.dataSource = self;
     tableView.delegate  = self;
@@ -165,7 +165,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if ([scrollView isEqual:self.tableView]) {
         
-        [_player playerScrollIsSupportSmallWindowPlay:NO];
+        [_player playerScrollIsSupportSmallWindowPlay:YES];
     }
 }
 

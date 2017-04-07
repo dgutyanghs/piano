@@ -477,11 +477,11 @@ static CGFloat const playBtnSideLength = 60.0f;
     self.frame = [self convertRect:self.frame toView:self.keyWindow];
     [self.keyWindow addSubview:self];
     
-    [UIView animateWithDuration:0.3 animations:^{
-        
+    CGFloat padding = 4.0;
+    [UIView animateWithDuration:0.5 animations:^{
         CGFloat w = self.playerOriginalFrame.size.width * 0.5;
         CGFloat h = self.playerOriginalFrame.size.height * 0.5;
-        CGRect smallFrame = CGRectMake(tableViewframe.origin.x + tableViewframe.size.width - w, tableViewframe.origin.y + tableViewframe.size.height - h, w, h);
+        CGRect smallFrame = CGRectMake(tableViewframe.origin.x + tableViewframe.size.width - w - padding, tableViewframe.origin.y + tableViewframe.size.height - h - padding, w, h);
         self.frame = smallFrame;
         self.playerLayer.frame = self.bounds;
         self.activityIndicatorView.center = CGPointMake(w / 2.0, h / 2.0);
@@ -489,12 +489,14 @@ static CGFloat const playBtnSideLength = 60.0f;
 }
 
 - (void)returnToOriginView {
-    if (![self.superview isKindOfClass:[UIWindow class]]) return;
+    if (![self.superview isKindOfClass:[UIWindow class]])
+        return;
+    
     self.smallWinPlaying = NO;
     self.playOrPauseBtn.hidden = NO;
     self.bottomBar.hidden = NO;
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:0.9 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         self.frame = CGRectMake(self.currentPlayCellRect.origin.x, self.currentPlayCellRect.origin.y, self.playerOriginalFrame.size.width, self.playerOriginalFrame.size.height);
         self.playerLayer.frame = self.bounds;
