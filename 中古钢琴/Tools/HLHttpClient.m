@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "AppDelegate.h"
 #import "HLAccountManger.h"
+#import "ISMessages+Alex.h"
 //#import "const.h"
 
 
@@ -70,6 +71,7 @@ static NSString *errorStr = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[HLHttpClient alloc] init];
+        [_instance startNetworkMonitor];
     });
     return _instance;
 }
@@ -357,27 +359,10 @@ static NSString *errorStr = nil;
                 
             case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
                 HLLog(@"蜂窝数据网");
-                if (![self isTokenValid]) {
-                    __weak __typeof(self) weakSelf = self;
-                    [self loginServerAutomaticSuccess:^(NSDictionary * responseObject) {
-                        NSNumber *expire = responseObject[@"expire"];
-                        NSTimeInterval expireStand = expire.doubleValue / 1000.0;
-                        NSString *token = responseObject[@"token"];
-                        [weakSelf updateToken:token AndExpireTime:@(expireStand)];
-                    }];
-                }
+//                [ISMessages showResultMsg:@"请到WiFi下观看视频, 土豪请忽略!" title:@"移动蜂窝网数据"Status:ISAlertTypeWarning];
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
-                if (![self isTokenValid]) {
-                    __weak __typeof(self) weakSelf = self;
-                    [self loginServerAutomaticSuccess:^(NSDictionary * responseObject) {
-                        NSNumber *expire = responseObject[@"expire"];
-                        NSTimeInterval expireStand = expire.doubleValue / 1000.0;
-                        NSString *token = responseObject[@"token"];
-                        [weakSelf updateToken:token AndExpireTime:@(expireStand)];
-                    }];
-                }
                 HLLog(@"WIFI网络");
                 break;
         }

@@ -96,8 +96,23 @@
     
     [self.view addSubview:tableView];
     
-//    [tableView autoPinEdgesToSuperviewEdges];
-     
+    
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self alertUserWhenNewworkInWWanStatus];
+}
+
+- (void)alertUserWhenNewworkInWWanStatus {
+    
+    HLHttpClient *client = [HLHttpClient sharedInstance];
+    if (client.isNetworkReachableViaWWAN) {
+        [ISMessages showResultMsg:@"在线视频会产生流量费用,请到WiFi下观看视频, 土豪随意!" title:@"移动蜂窝网数据"Status:ISAlertTypeWarning];
+    }
 }
 
 
