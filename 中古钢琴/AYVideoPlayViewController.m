@@ -33,7 +33,7 @@
     self.title = self.videoItem.title;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    CGFloat textY = self.player.height + self.player.y;
+    CGFloat textY = self.player.height + self.player.y + 64;
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, textY, ScreenWidth, ScreenHeight - textY)];
     textView.editable = NO;
     textView.text = _videoItem.desc;
