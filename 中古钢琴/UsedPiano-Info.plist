@@ -45,6 +45,15 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>www.popiano.org</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>120.25.207.78</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>

@@ -76,7 +76,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"视频列表";
+    self.navigationItem.title = @"视频列表";
     
     [self fetchVideoListData];
     

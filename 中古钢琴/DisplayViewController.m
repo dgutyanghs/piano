@@ -51,7 +51,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"中古钢琴";
+    self.navigationItem.title = @"中古钢琴";
     self.sectionIndexTitleShow = YES;
     
     self.pianosA = (NSMutableArray *)[self DataSourceInit];

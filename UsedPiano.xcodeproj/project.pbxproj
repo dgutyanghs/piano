@@ -62,6 +62,7 @@
 		C054DC7919FE9B7D00C82E36 /* pianoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C054DC7019FE9B7D00C82E36 /* pianoCell.m */; };
 		C054DC7B19FE9B7D00C82E36 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C054DC7319FE9B7D00C82E36 /* DisplayViewController.m */; };
 		C054DC7C19FE9B7D00C82E36 /* PianoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C054DC7519FE9B7D00C82E36 /* PianoDetailViewController.m */; };
+		C0677E541E992D31008C1356 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C0677E531E992D31008C1356 /* libxml2.2.tbd */; };
 		C07226261A788DEB00FB1B5C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07226251A788DEB00FB1B5C /* CoreLocation.framework */; };
 		C08B1A641A7235990079A116 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08B1A631A7235990079A116 /* SystemConfiguration.framework */; };
 		C08B1A661A7235A40079A116 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08B1A651A7235A40079A116 /* QuartzCore.framework */; };
@@ -78,6 +79,12 @@
 		C0D64ED41E4EABD500C91851 /* HZPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64ECD1E4EABD500C91851 /* HZPhotoItem.m */; };
 		C0D64ED51E4EABD500C91851 /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D64ECF1E4EABD500C91851 /* HZWaitingView.m */; };
 		C0D64ED61E4EABD500C91851 /* whiteplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C0D64ED01E4EABD500C91851 /* whiteplaceholder.png */; };
+		C0FB171B1E9937CC00A68F72 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17161E9937CC00A68F72 /* TFHpple.m */; };
+		C0FB171C1E9937CC00A68F72 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17181E9937CC00A68F72 /* TFHppleElement.m */; };
+		C0FB171D1E9937CC00A68F72 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB171A1E9937CC00A68F72 /* XPathQuery.m */; };
+		C0FB17201E993A5F00A68F72 /* PriceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB171F1E993A5F00A68F72 /* PriceTableViewController.m */; };
+		C0FB17231E993C3300A68F72 /* PopPiano.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17221E993C3300A68F72 /* PopPiano.m */; };
+		C0FB17261E993FB300A68F72 /* PriceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17251E993FB300A68F72 /* PriceDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +192,8 @@
 		C054DC7319FE9B7D00C82E36 /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		C054DC7419FE9B7D00C82E36 /* PianoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PianoDetailViewController.h; sourceTree = "<group>"; };
 		C054DC7519FE9B7D00C82E36 /* PianoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PianoDetailViewController.m; sourceTree = "<group>"; };
+		C0677E511E992D10008C1356 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		C0677E531E992D31008C1356 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		C07226251A788DEB00FB1B5C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C08B1A631A7235990079A116 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C08B1A651A7235A40079A116 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -207,6 +216,18 @@
 		C0D64ECE1E4EABD500C91851 /* HZWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWaitingView.h; sourceTree = "<group>"; };
 		C0D64ECF1E4EABD500C91851 /* HZWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWaitingView.m; sourceTree = "<group>"; };
 		C0D64ED01E4EABD500C91851 /* whiteplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteplaceholder.png; sourceTree = "<group>"; };
+		C0FB17151E9937CC00A68F72 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		C0FB17161E9937CC00A68F72 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		C0FB17171E9937CC00A68F72 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		C0FB17181E9937CC00A68F72 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		C0FB17191E9937CC00A68F72 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		C0FB171A1E9937CC00A68F72 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		C0FB171E1E993A5F00A68F72 /* PriceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceTableViewController.h; sourceTree = "<group>"; };
+		C0FB171F1E993A5F00A68F72 /* PriceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceTableViewController.m; sourceTree = "<group>"; };
+		C0FB17211E993C3300A68F72 /* PopPiano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopPiano.h; sourceTree = "<group>"; };
+		C0FB17221E993C3300A68F72 /* PopPiano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopPiano.m; sourceTree = "<group>"; };
+		C0FB17241E993FB300A68F72 /* PriceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceDetailViewController.h; sourceTree = "<group>"; };
+		C0FB17251E993FB300A68F72 /* PriceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceDetailViewController.m; sourceTree = "<group>"; };
 		E44589926D07BF3D0B007775 /* Pods-UsedPiano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsedPiano.release.xcconfig"; path = "Pods/Target Support Files/Pods-UsedPiano/Pods-UsedPiano.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0677E541E992D31008C1356 /* libxml2.2.tbd in Frameworks */,
 				C07226261A788DEB00FB1B5C /* CoreLocation.framework in Frameworks */,
 				C08B1A701A7237480079A116 /* MessageUI.framework in Frameworks */,
 				C08B1A6E1A7235EF0079A116 /* Security.framework in Frameworks */,
@@ -310,6 +332,8 @@
 			children = (
 				C054DC6D19FE9B7D00C82E36 /* piano.h */,
 				C054DC6E19FE9B7D00C82E36 /* piano.m */,
+				C0FB17211E993C3300A68F72 /* PopPiano.h */,
+				C0FB17221E993C3300A68F72 /* PopPiano.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -346,6 +370,10 @@
 				08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */,
 				C021E9B71E8792CA002854FC /* AboutmeViewController.h */,
 				C021E9B81E8792CA002854FC /* AboutmeViewController.m */,
+				C0FB171E1E993A5F00A68F72 /* PriceTableViewController.h */,
+				C0FB171F1E993A5F00A68F72 /* PriceTableViewController.m */,
+				C0FB17241E993FB300A68F72 /* PriceDetailViewController.h */,
+				C0FB17251E993FB300A68F72 /* PriceDetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -353,6 +381,7 @@
 		086474691DF5479400072CB1 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C0FB17141E9937CC00A68F72 /* Hpple */,
 				084C2AD31E8B5A5A00402F8A /* SURefresh */,
 				08012CA91E83C63200E925CD /* Model */,
 				08012CA31E83C25400E925CD /* View */,
@@ -439,6 +468,8 @@
 		C054DC2919FE9AEE00C82E36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0677E531E992D31008C1356 /* libxml2.2.tbd */,
+				C0677E511E992D10008C1356 /* libxml2.tbd */,
 				C07226251A788DEB00FB1B5C /* CoreLocation.framework */,
 				C08B1A6F1A7237480079A116 /* MessageUI.framework */,
 				C08B1A6D1A7235EF0079A116 /* Security.framework */,
@@ -526,6 +557,19 @@
 				C0D64ED01E4EABD500C91851 /* whiteplaceholder.png */,
 			);
 			path = ptotoBrowser;
+			sourceTree = "<group>";
+		};
+		C0FB17141E9937CC00A68F72 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				C0FB17151E9937CC00A68F72 /* TFHpple.h */,
+				C0FB17161E9937CC00A68F72 /* TFHpple.m */,
+				C0FB17171E9937CC00A68F72 /* TFHppleElement.h */,
+				C0FB17181E9937CC00A68F72 /* TFHppleElement.m */,
+				C0FB17191E9937CC00A68F72 /* XPathQuery.h */,
+				C0FB171A1E9937CC00A68F72 /* XPathQuery.m */,
+			);
+			path = Hpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -711,15 +755,21 @@
 				C0D64ED11E4EABD500C91851 /* HZPhotoBrowser.m in Sources */,
 				C054DC3719FE9AEE00C82E36 /* main.m in Sources */,
 				086474871DF5480200072CB1 /* UIBarButtonItem+Extension.m in Sources */,
+				C0FB171C1E9937CC00A68F72 /* TFHppleElement.m in Sources */,
 				084C2ADA1E8B5A5A00402F8A /* SURefreshHeader.m in Sources */,
 				085FAFDD1E810E8B00A3F53E /* AYWebView.m in Sources */,
+				C0FB17231E993C3300A68F72 /* PopPiano.m in Sources */,
 				086474841DF547D600072CB1 /* UIView+Extension.m in Sources */,
+				C0FB171D1E9937CC00A68F72 /* XPathQuery.m in Sources */,
 				084C2ADC1E8B5A5A00402F8A /* UIView+SURefresh.m in Sources */,
 				086474961DF5483700072CB1 /* HLAudioTool.m in Sources */,
+				C0FB17261E993FB300A68F72 /* PriceDetailViewController.m in Sources */,
 				08012CA11E83C24900E925CD /* XLSlider.m in Sources */,
 				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,
+				C0FB17201E993A5F00A68F72 /* PriceTableViewController.m in Sources */,
 				086474801DF547D600072CB1 /* UIFont+HLFont.m in Sources */,
 				C021E9B91E8792CA002854FC /* AboutmeViewController.m in Sources */,
+				C0FB171B1E9937CC00A68F72 /* TFHpple.m in Sources */,
 				C0D64ED21E4EABD500C91851 /* HZPhotoBrowserView.m in Sources */,
 				C054DC7C19FE9B7D00C82E36 /* PianoDetailViewController.m in Sources */,
 				0864747F1DF547D600072CB1 /* UIColor+Help.m in Sources */,
@@ -795,6 +845,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "66b9f0a5-21bb-4402-a1be-5372c2b65cb9";
@@ -828,6 +879,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PROVISIONING_PROFILE = "66b9f0a5-21bb-4402-a1be-5372c2b65cb9";
 				SDKROOT = iphoneos;
