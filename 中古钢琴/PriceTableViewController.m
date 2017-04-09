@@ -18,6 +18,7 @@
 
 @interface PriceTableViewController ()
 @property (nonatomic , strong) NSMutableArray <PopPiano *> *popPianos;
+@property (nonatomic , strong) NSArray <NSString *> *prices;
 @end
 
 @implementation PriceTableViewController
@@ -66,20 +67,45 @@
     
     // 4
     NSMutableArray *pops = [[NSMutableArray alloc] initWithCapacity:0];
-    for (TFHppleElement *element in popNodes) {
-        // 5
-        PopPiano *item = [[PopPiano alloc] init];
-        [pops addObject:item];
-        
-        // 6
-        item.title = [[element firstChild] content];
-        
-        // 7
-        item.url = [element objectForKey:@"href"];
-    }
     
+    @autoreleasepool {
+        for (TFHppleElement *element in popNodes) {
+            // 5
+            PopPiano *item = [[PopPiano alloc] init];
+            [pops addObject:item];
+            
+            // 6
+            item.title = [[element firstChild] content];
+            
+            // 7
+            item.url = [element objectForKey:@"href"];
+        }
+    }
     // 8
     _popPianos = pops;
+    
+    NSString *priceQueryString = @"//div[@id='content']/text()";
+    NSArray *priceNodes = [htmlParser searchWithXPathQuery:priceQueryString];
+    NSMutableArray *newPriceArray = [NSMutableArray arrayWithCapacity:1];
+    
+    NSArray *resultArray = [NSArray array];
+    
+    @autoreleasepool {
+        
+        for (TFHppleElement *element in priceNodes) {
+            NSString *title = [element  content];
+            NSLog(@"price:%@", title);
+            [newPriceArray addObject:title];
+        }
+        
+        NSString *matchStr = @"均价";
+        NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",matchStr];
+        resultArray = [newPriceArray filteredArrayUsingPredicate:bPredicate];
+        NSLog(@"HERE %@",resultArray.debugDescription);
+    }
+    self.prices = resultArray;
+    
+    
     [self.tableView reloadData];
 }
 
@@ -105,11 +131,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     PopPiano *item = self.popPianos[indexPath.row];
     
     cell.textLabel.text = item.title;
+    cell.detailTextLabel.text = self.prices[indexPath.row];
     
     return cell;
 }
