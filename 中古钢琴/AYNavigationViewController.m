@@ -22,13 +22,14 @@
     textAttrs[NSForegroundColorAttributeName]   = [UIColor blackColor];
     textAttrs[NSFontAttributeName]              = [UIFont systemFontOfSize:13.0];
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    item.tintColor = [UIColor whiteColor];
+//    item.tintColor = [UIColor greenColor];
     
     
     NSMutableDictionary *disableTextAttrs = [NSMutableDictionary dictionary];
     disableTextAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.7];
     disableTextAttrs[NSFontAttributeName]            = [UIFont systemFontOfSize:13.0];
     [item setTitleTextAttributes:disableTextAttrs forState:UIControlStateDisabled];
+    
 }
 
 
@@ -52,6 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationBar.barTintColor = [UIColor grayColorHL1];
 }
 
 - (void)didReceiveMemoryWarning {

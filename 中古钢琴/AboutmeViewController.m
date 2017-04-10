@@ -27,7 +27,7 @@
 
 - (void)initialResource {
     self.descTextView.editable = NO;
-    NSString *desc = @"    中古钢琴，到现在仍有很好的使用价值，有些品质优良。深受广大专业人士喜爱.\n本App 收集了大量的古代，近代的钢琴数据，包括型号，颜色，生产年份，发行价格等等。供大家参考.";
+    NSString *desc = @"    中古钢琴，到现在仍有很好的使用价值，有些品质优良。深受广大专业人士喜爱.\n本App 收集了大量的古代，近代的钢琴数据，包括型号，颜色，生产年份，发行价格等等。供大家参考. 增加最近市场上热门型号行情信息";
     self.descTextView.text = desc;
     [self.logoImageView setImage:[UIImage imageNamed:@"pianoPNG60"]];
     self.logoImageView.layer.cornerRadius = 5;

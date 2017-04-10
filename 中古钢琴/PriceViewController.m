@@ -1,5 +1,5 @@
 //
-//  PriceTableViewController.m
+//  PriceViewController.m
 //  Pods
 //
 //  Created by  BlueYang on 2017/4/8.
@@ -7,7 +7,7 @@
 //
 
 
-#import "PriceTableViewController.h"
+#import "PriceViewController.h"
 #import "TFHpple.h"
 #import "PopPiano.h"
 #import "PriceDetailViewController.h"
@@ -16,12 +16,15 @@
 
 #define PRICE_URLSTR @"http://www.popiano.org/price/name/"
 
-@interface PriceTableViewController ()
+@interface PriceViewController () <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic , strong) NSMutableArray <PopPiano *> *popPianos;
-@property (nonatomic , strong) NSArray <NSString *> *prices;
+@property (nonatomic , strong) NSArray <PopPiano *> *dataSourcePianos;
+//@property (nonatomic, weak) UITableView *tableView;
 @end
 
-@implementation PriceTableViewController
+@implementation PriceViewController
 
 - (NSMutableArray *)popPianos {
     if (_popPianos == nil) {
@@ -42,6 +45,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.searchBar.placeholder = @"请输入品牌型号(如:珠江 118)";
+    self.searchBar.delegate  = self;
     
     [self loadPriceData];
     __weak typeof(self) weakSelf = self;
@@ -88,7 +93,7 @@
     NSArray *priceNodes = [htmlParser searchWithXPathQuery:priceQueryString];
     NSMutableArray *newPriceArray = [NSMutableArray arrayWithCapacity:1];
     
-    NSArray *resultArray = [NSArray array];
+    NSArray <NSString *> *resultArray = [NSArray array];
     
     @autoreleasepool {
         
@@ -101,12 +106,18 @@
         NSString *matchStr = @"均价";
         NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",matchStr];
         resultArray = [newPriceArray filteredArrayUsingPredicate:bPredicate];
-        NSLog(@"HERE %@",resultArray.debugDescription);
     }
-    self.prices = resultArray;
+    
+    for (int i = 0; i < self.popPianos.count; i++) {
+        PopPiano *item = self.popPianos[i];
+        item.price = resultArray[i];
+    }
+    
+    self.dataSourcePianos = self.popPianos;
     
     
     [self.tableView reloadData];
+    [self.tableView.header endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -121,7 +132,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.popPianos.count;
+    return self.dataSourcePianos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -133,10 +144,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    PopPiano *item = self.popPianos[indexPath.row];
+    PopPiano *item = self.dataSourcePianos[indexPath.row];
     
     cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = self.prices[indexPath.row];
+    cell.detailTextLabel.text = item.price;
     
     return cell;
 }
@@ -153,48 +164,36 @@
     
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.searchBar.isFirstResponder) {
+        [self.searchBar resignFirstResponder];
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+
+#pragma mark - UISearchBar delegate
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+//    [self.popPianos removeAllObjects];
+    if ([searchText isEqualToString:@""]) {
+        self.dataSourcePianos = self.popPianos;
+    }else {
+        NSString *matchStr = searchText;
+        NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"title CONTAINS %@",matchStr];
+        NSArray *resultArray = nil;
+        resultArray = [self.popPianos filteredArrayUsingPredicate:bPredicate];
+        self.dataSourcePianos = resultArray;
+    }
+    [self.tableView reloadData];
+
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.searchBar resignFirstResponder];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

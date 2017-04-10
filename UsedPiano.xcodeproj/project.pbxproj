@@ -29,7 +29,6 @@
 		086474801DF547D600072CB1 /* UIFont+HLFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474731DF547D600072CB1 /* UIFont+HLFont.m */; };
 		086474811DF547D600072CB1 /* UIImage+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474751DF547D600072CB1 /* UIImage+MJ.m */; };
 		086474821DF547D600072CB1 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474771DF547D600072CB1 /* UILabel+StringFrame.m */; };
-		086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474791DF547D600072CB1 /* UINavigationBar+BackgroundColor.m */; };
 		086474841DF547D600072CB1 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0864747B1DF547D600072CB1 /* UIView+Extension.m */; };
 		086474871DF5480200072CB1 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474861DF5480200072CB1 /* UIBarButtonItem+Extension.m */; };
 		0864748A1DF5480E00072CB1 /* ISMessages+Alex.m in Sources */ = {isa = PBXBuildFile; fileRef = 086474891DF5480E00072CB1 /* ISMessages+Alex.m */; };
@@ -82,7 +81,7 @@
 		C0FB171B1E9937CC00A68F72 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17161E9937CC00A68F72 /* TFHpple.m */; };
 		C0FB171C1E9937CC00A68F72 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17181E9937CC00A68F72 /* TFHppleElement.m */; };
 		C0FB171D1E9937CC00A68F72 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB171A1E9937CC00A68F72 /* XPathQuery.m */; };
-		C0FB17201E993A5F00A68F72 /* PriceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB171F1E993A5F00A68F72 /* PriceTableViewController.m */; };
+		C0FB17201E993A5F00A68F72 /* PriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB171F1E993A5F00A68F72 /* PriceViewController.m */; };
 		C0FB17231E993C3300A68F72 /* PopPiano.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17221E993C3300A68F72 /* PopPiano.m */; };
 		C0FB17261E993FB300A68F72 /* PriceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FB17251E993FB300A68F72 /* PriceDetailViewController.m */; };
 /* End PBXBuildFile section */
@@ -139,8 +138,6 @@
 		086474751DF547D600072CB1 /* UIImage+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MJ.m"; sourceTree = "<group>"; };
 		086474761DF547D600072CB1 /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
 		086474771DF547D600072CB1 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
-		086474781DF547D600072CB1 /* UINavigationBar+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackgroundColor.h"; sourceTree = "<group>"; };
-		086474791DF547D600072CB1 /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
 		0864747A1DF547D600072CB1 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		0864747B1DF547D600072CB1 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		086474851DF5480200072CB1 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -222,8 +219,8 @@
 		C0FB17181E9937CC00A68F72 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		C0FB17191E9937CC00A68F72 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		C0FB171A1E9937CC00A68F72 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		C0FB171E1E993A5F00A68F72 /* PriceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceTableViewController.h; sourceTree = "<group>"; };
-		C0FB171F1E993A5F00A68F72 /* PriceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceTableViewController.m; sourceTree = "<group>"; };
+		C0FB171E1E993A5F00A68F72 /* PriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceViewController.h; sourceTree = "<group>"; };
+		C0FB171F1E993A5F00A68F72 /* PriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceViewController.m; sourceTree = "<group>"; };
 		C0FB17211E993C3300A68F72 /* PopPiano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopPiano.h; sourceTree = "<group>"; };
 		C0FB17221E993C3300A68F72 /* PopPiano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopPiano.m; sourceTree = "<group>"; };
 		C0FB17241E993FB300A68F72 /* PriceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceDetailViewController.h; sourceTree = "<group>"; };
@@ -370,8 +367,8 @@
 				08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */,
 				C021E9B71E8792CA002854FC /* AboutmeViewController.h */,
 				C021E9B81E8792CA002854FC /* AboutmeViewController.m */,
-				C0FB171E1E993A5F00A68F72 /* PriceTableViewController.h */,
-				C0FB171F1E993A5F00A68F72 /* PriceTableViewController.m */,
+				C0FB171E1E993A5F00A68F72 /* PriceViewController.h */,
+				C0FB171F1E993A5F00A68F72 /* PriceViewController.m */,
 				C0FB17241E993FB300A68F72 /* PriceDetailViewController.h */,
 				C0FB17251E993FB300A68F72 /* PriceDetailViewController.m */,
 			);
@@ -420,8 +417,6 @@
 				086474751DF547D600072CB1 /* UIImage+MJ.m */,
 				086474761DF547D600072CB1 /* UILabel+StringFrame.h */,
 				086474771DF547D600072CB1 /* UILabel+StringFrame.m */,
-				086474781DF547D600072CB1 /* UINavigationBar+BackgroundColor.h */,
-				086474791DF547D600072CB1 /* UINavigationBar+BackgroundColor.m */,
 				0864747A1DF547D600072CB1 /* UIView+Extension.h */,
 				0864747B1DF547D600072CB1 /* UIView+Extension.m */,
 			);
@@ -765,8 +760,7 @@
 				086474961DF5483700072CB1 /* HLAudioTool.m in Sources */,
 				C0FB17261E993FB300A68F72 /* PriceDetailViewController.m in Sources */,
 				08012CA11E83C24900E925CD /* XLSlider.m in Sources */,
-				086474831DF547D600072CB1 /* UINavigationBar+BackgroundColor.m in Sources */,
-				C0FB17201E993A5F00A68F72 /* PriceTableViewController.m in Sources */,
+				C0FB17201E993A5F00A68F72 /* PriceViewController.m in Sources */,
 				086474801DF547D600072CB1 /* UIFont+HLFont.m in Sources */,
 				C021E9B91E8792CA002854FC /* AboutmeViewController.m in Sources */,
 				C0FB171B1E9937CC00A68F72 /* TFHpple.m in Sources */,

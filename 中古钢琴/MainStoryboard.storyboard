@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qdb-Ae-iC5">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qdb-Ae-iC5">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="56" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Adi-T2-hAG" id="Dhl-Fo-9Ix">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MW7-r8-IhA">
@@ -309,35 +309,6 @@
             </objects>
             <point key="canvasLocation" x="-1509" y="1570"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="mQ4-1G-C3q">
-            <objects>
-                <tableViewController id="70z-lN-60C" customClass="PriceTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K8R-nC-hWa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XoP-IQ-SGf">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XoP-IQ-SGf" id="Mdf-bk-W6N">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="70z-lN-60C" id="FiM-rs-sOc"/>
-                            <outlet property="delegate" destination="70z-lN-60C" id="5Dw-u2-emD"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="OR4-57-okQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="By6-DI-q5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-450" y="738"/>
-        </scene>
         <!--行情-->
         <scene sceneID="sPy-rl-PZn">
             <objects>
@@ -348,12 +319,61 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="70z-lN-60C" kind="relationship" relationship="rootViewController" id="aHv-bb-zP7"/>
+                        <segue destination="sGS-uL-0g9" kind="relationship" relationship="rootViewController" id="A6f-BJ-AXb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsX-wz-HbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1423" y="671"/>
+        </scene>
+        <!--Price View Controller-->
+        <scene sceneID="TtW-fK-KG4">
+            <objects>
+                <viewController id="sGS-uL-0g9" customClass="PriceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hvZ-bU-8L4"/>
+                        <viewControllerLayoutGuide type="bottom" id="WzG-tv-y3a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FID-Ie-3YM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="u7a-TU-lce">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sGS-uL-0g9" id="tlj-nc-Gsd"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="th8-57-96a">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sGS-uL-0g9" id="qCb-5A-PzX"/>
+                                    <outlet property="delegate" destination="sGS-uL-0g9" id="L2R-gK-vAQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u7a-TU-lce" firstAttribute="trailing" secondItem="th8-57-96a" secondAttribute="trailing" id="Ca2-so-Bwt"/>
+                            <constraint firstItem="th8-57-96a" firstAttribute="bottom" secondItem="WzG-tv-y3a" secondAttribute="top" id="SyE-8p-wiP"/>
+                            <constraint firstItem="u7a-TU-lce" firstAttribute="top" secondItem="hvZ-bU-8L4" secondAttribute="bottom" id="YGA-Oy-4Kp"/>
+                            <constraint firstItem="u7a-TU-lce" firstAttribute="leading" secondItem="th8-57-96a" secondAttribute="leading" id="cAR-IN-fxR"/>
+                            <constraint firstItem="th8-57-96a" firstAttribute="top" secondItem="u7a-TU-lce" secondAttribute="bottom" id="eMc-PQ-hKu"/>
+                            <constraint firstAttribute="trailing" secondItem="u7a-TU-lce" secondAttribute="trailing" id="mEE-28-HV3"/>
+                            <constraint firstItem="u7a-TU-lce" firstAttribute="leading" secondItem="FID-Ie-3YM" secondAttribute="leading" id="tDa-U1-4LG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sx8-Ic-38X"/>
+                    <connections>
+                        <outlet property="searchBar" destination="u7a-TU-lce" id="12j-RS-ZSv"/>
+                        <outlet property="tableView" destination="th8-57-96a" id="j8T-Cx-mGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQr-IK-qJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-579.375" y="726.76056338028172"/>
         </scene>
     </scenes>
     <resources>
