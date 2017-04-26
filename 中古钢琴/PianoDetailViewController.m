@@ -53,7 +53,8 @@
 //    self.btnBaidu.tag   = 1;
     self.btnTaoBao.tag  = 2;
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"girlPiano2.jpg"];
+    UIImage *backgroundImage = [UIImage imageNamed:@"background3.png"];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"girlPiano2.jpg"];
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
 //    self.view.alpha = 0.5;
 //    self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];

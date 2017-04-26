@@ -42,9 +42,6 @@
 		08EE6B341E7FE45D001565C5 /* AYPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EE6B331E7FE45D001565C5 /* AYPlayViewController.m */; };
 		A311BF3069DCF1C947FB1D4C /* libPods-UsedPiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B358400DA895ACED4EDD76AC /* libPods-UsedPiano.a */; };
 		C021E9B91E8792CA002854FC /* AboutmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C021E9B81E8792CA002854FC /* AboutmeViewController.m */; };
-		C02AAFE91A80EADE0011454D /* GirlPiano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFE81A80EADE0011454D /* GirlPiano.jpg */; };
-		C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFEE1A80F0540011454D /* girlPiano2.jpg */; };
-		C02AAFF11A80F1B60011454D /* girlPiano3.png in Resources */ = {isa = PBXBuildFile; fileRef = C02AAFF01A80F1B60011454D /* girlPiano3.png */; };
 		C054DC2B19FE9AEE00C82E36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C054DC2A19FE9AEE00C82E36 /* Foundation.framework */; };
 		C054DC2D19FE9AEE00C82E36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C054DC2C19FE9AEE00C82E36 /* CoreGraphics.framework */; };
 		C054DC2F19FE9AEE00C82E36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C054DC2E19FE9AEE00C82E36 /* UIKit.framework */; };
@@ -162,9 +159,6 @@
 		B358400DA895ACED4EDD76AC /* libPods-UsedPiano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UsedPiano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C021E9B71E8792CA002854FC /* AboutmeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutmeViewController.h; sourceTree = "<group>"; };
 		C021E9B81E8792CA002854FC /* AboutmeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutmeViewController.m; sourceTree = "<group>"; };
-		C02AAFE81A80EADE0011454D /* GirlPiano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = GirlPiano.jpg; path = AppIcon/GirlPiano.jpg; sourceTree = "<group>"; };
-		C02AAFEE1A80F0540011454D /* girlPiano2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = girlPiano2.jpg; path = AppIcon/girlPiano2.jpg; sourceTree = "<group>"; };
-		C02AAFF01A80F1B60011454D /* girlPiano3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = girlPiano3.png; path = AppIcon/girlPiano3.png; sourceTree = "<group>"; };
 		C054DC2719FE9AEE00C82E36 /* UsedPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsedPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C054DC2A19FE9AEE00C82E36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C054DC2C19FE9AEE00C82E36 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -506,9 +500,6 @@
 			children = (
 				08AC91471E09405300F3E083 /* Internet Widgits Pty Ltd.cer */,
 				0864744C1DF540B800072CB1 /* AlexPianoDataBase.sqlite */,
-				C02AAFF01A80F1B60011454D /* girlPiano3.png */,
-				C02AAFEE1A80F0540011454D /* girlPiano2.jpg */,
-				C02AAFE81A80EADE0011454D /* GirlPiano.jpg */,
 				C054DC3219FE9AEE00C82E36 /* UsedPiano-Info.plist */,
 				C054DC3619FE9AEE00C82E36 /* main.m */,
 				C054DC3819FE9AEE00C82E36 /* UsedPiano-Prefix.pch */,
@@ -650,16 +641,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C02AAFF11A80F1B60011454D /* girlPiano3.png in Resources */,
 				0864744D1DF540B800072CB1 /* AlexPianoDataBase.sqlite in Resources */,
 				C0C8938F1A00EDC0001BE1F0 /* piano_detail.plist in Resources */,
 				08AC91461E092A6C00F3E083 /* Default-568h@2x.png in Resources */,
 				08012CA01E83C24900E925CD /* ImageResources.bundle in Resources */,
 				C054DC4319FE9AEE00C82E36 /* Images.xcassets in Resources */,
 				08AC91481E09405300F3E083 /* Internet Widgits Pty Ltd.cer in Resources */,
-				C02AAFEF1A80F0540011454D /* girlPiano2.jpg in Resources */,
 				C0D64ED61E4EABD500C91851 /* whiteplaceholder.png in Resources */,
-				C02AAFE91A80EADE0011454D /* GirlPiano.jpg in Resources */,
 				C0C5C8561A49761800449FE1 /* MainStoryboard.storyboard in Resources */,
 				08012CA81E83C25400E925CD /* XLVideoCell.xib in Resources */,
 			);

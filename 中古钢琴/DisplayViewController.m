@@ -63,7 +63,8 @@
     self.searchBar.delegate  = self;
     
     
-    UIImageView *backView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"girlPiano3.png"]];
+//    UIImageView *backView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"girlPiano3.png"]];
+    UIImageView *backView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"background4.png"]];
     self.tableView.backgroundView = backView;
     
    
@@ -248,7 +249,9 @@
     
     cell.textLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row]model];
     cell.detailTextLabel.text = [[_pianosA[indexPath.section] objectAtIndex:indexPath.row] logo];
-    cell.detailTextLabel.textColor = [UIColor colorWithRed:88/255.0 green:149/255.0 blue:217/255.0 alpha:1.0];
+//    cell.detailTextLabel.textColor = [UIColor colorWithRed:88/255.0 green:149/255.0 blue:217/255.0 alpha:1.0];
+    cell.textLabel.textColor = [UIColor greenColor];
+    cell.detailTextLabel.textColor = [UIColor purpleColor];
     
     cell.backgroundColor = [UIColor clearColor];
     return cell;
@@ -268,6 +271,18 @@
     }
     return headTitle;
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    view.tintColor = [UIColor redColor];
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    header.textLabel.textColor = [UIColor cyanColorHL_New];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *footer = (UITableViewHeaderFooterView *)view;
+    footer.textLabel.textColor = [UIColor cyanColorHL_New];
+}
+
 
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
