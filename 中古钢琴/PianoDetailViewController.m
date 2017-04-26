@@ -8,6 +8,7 @@
 
 #import "PianoDetailViewController.h"
 #import "piano.h"
+#import "PriceDetailViewController.h"
 
 @interface PianoDetailViewController ()
 @property (nonatomic, strong) NSDictionary *pianoData;
@@ -22,6 +23,7 @@
 
 - (IBAction)ShareOnClick:(UIButton *)sender;
 
+- (IBAction)btnTaoBaoDidClicked:(UIButton *)sender;
 @end
 
 @implementation PianoDetailViewController
@@ -54,10 +56,6 @@
     self.btnTaoBao.tag  = 2;
     
     UIImage *backgroundImage = [UIImage imageNamed:@"background3.png"];
-//    UIImage *backgroundImage = [UIImage imageNamed:@"girlPiano2.jpg"];
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-//    self.view.alpha = 0.5;
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     self.tableView.backgroundView = [[UIImageView alloc]initWithImage:backgroundImage];
     
     self.btnTaoBao.layer.cornerRadius = 6;
@@ -68,7 +66,7 @@
     self.btnShare.layer.masksToBounds = YES;
 
     self.btnBaidu.hidden = YES;
-    self.btnTaoBao.hidden = YES;
+//    self.btnTaoBao.hidden = YES;
     self.btnShare.hidden = YES;
 }
 
@@ -128,18 +126,6 @@
     return cell;
 }
 
-- (IBAction)inforBtnOnClicked:(UIBarButtonItem *)sender {
-//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"中古钢琴大全" message:@"感谢大家的支持，如有问题请联系:\ndgutyang@gmail.com" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//    
-//    [alert show];
-
-}
-
-- (IBAction)ShareOnClick:(UIButton *)sender {
-
-//    UIImage * imageScreen = [self imageFromView:self.view];
-//    NSString * content = [NSString stringWithFormat:@"来自App'中古钢琴'：品牌：%@  型号：%@\n", self.pianoDetail.logo, self.pianoDetail.model];
-}
 
 
 //获得屏幕图像
@@ -161,4 +147,12 @@
 }
 
 
+
+- (IBAction)btnTaoBaoDidClicked:(UIButton *)sender {
+    NSString *baseURLStr = @"https://s.taobao.com/";
+    PriceDetailViewController *taobaoVc = [[PriceDetailViewController alloc] init];
+    taobaoVc.urlStr = [NSString stringWithFormat:@"%@search?q=%@+%@", baseURLStr, self.pianoDetail.logo, self.pianoDetail.model];
+    
+    [self.navigationController pushViewController:taobaoVc animated:YES];
+}
 @end

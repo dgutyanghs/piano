@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qdb-Ae-iC5">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qdb-Ae-iC5">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,7 +64,7 @@
                                         <rect key="frame" x="0.0" y="56" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Adi-T2-hAG" id="Dhl-Fo-9Ix">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MW7-r8-IhA">
@@ -131,20 +131,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wYm-Da-Zl1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="RmJ-oQ-Qgl" id="yfD-Rb-1Ro"/>
                                     <outlet property="delegate" destination="RmJ-oQ-Qgl" id="DrI-bO-VMp"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndR-JL-XxG">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="aI2-1M-FEZ"/>
+                                </constraints>
+                                <state key="normal" title="去淘宝网查找该型号"/>
+                                <connections>
+                                    <action selector="btnTaoBaoDidClicked:" destination="RmJ-oQ-Qgl" eventType="touchUpInside" id="PiE-z2-veA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wYm-Da-Zl1" firstAttribute="top" secondItem="mZo-D7-7dE" secondAttribute="top" id="0rK-RF-JY0"/>
-                            <constraint firstAttribute="bottom" secondItem="wYm-Da-Zl1" secondAttribute="bottom" id="DPA-U9-wze"/>
-                            <constraint firstItem="wYm-Da-Zl1" firstAttribute="leading" secondItem="mZo-D7-7dE" secondAttribute="leading" id="Gvh-xb-fkb"/>
-                            <constraint firstAttribute="trailing" secondItem="wYm-Da-Zl1" secondAttribute="trailing" id="Uvn-zh-tKs"/>
+                            <constraint firstItem="ndR-JL-XxG" firstAttribute="top" secondItem="wYm-Da-Zl1" secondAttribute="bottom" id="07T-hD-vL7"/>
+                            <constraint firstAttribute="trailing" secondItem="ndR-JL-XxG" secondAttribute="trailing" id="E45-FP-Asn"/>
+                            <constraint firstItem="wYm-Da-Zl1" firstAttribute="leading" secondItem="mZo-D7-7dE" secondAttribute="leading" id="Hgs-NF-XQK"/>
+                            <constraint firstItem="wYm-Da-Zl1" firstAttribute="top" secondItem="mZo-D7-7dE" secondAttribute="top" id="Vjv-Wr-fnK"/>
+                            <constraint firstAttribute="bottom" secondItem="ndR-JL-XxG" secondAttribute="bottom" id="ePt-Q1-uI0"/>
+                            <constraint firstItem="ndR-JL-XxG" firstAttribute="leading" secondItem="mZo-D7-7dE" secondAttribute="leading" id="l0b-ur-TAH"/>
+                            <constraint firstAttribute="trailing" secondItem="wYm-Da-Zl1" secondAttribute="trailing" id="n31-UU-upV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="钢琴型号详情" id="oMw-6I-CWv">
@@ -155,6 +168,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnTaoBao" destination="ndR-JL-XxG" id="ast-0n-nrF"/>
                         <outlet property="tableView" destination="wYm-Da-Zl1" id="plD-YG-WtL"/>
                     </connections>
                 </viewController>
@@ -373,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQr-IK-qJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-579.375" y="726.76056338028172"/>
+            <point key="canvasLocation" x="-570" y="692"/>
         </scene>
     </scenes>
     <resources>
