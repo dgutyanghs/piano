@@ -392,8 +392,8 @@ static NSString *errorStr = nil;
 -(void)post:(NSString*)interface parameters:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail{
     
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",PREFIX, interface];
-    self.mgr.requestSerializer.timeoutInterval = 10.0;
     self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+    self.mgr.requestSerializer.timeoutInterval = 10.0;
     self.mgr.responseSerializer = [AFJSONResponseSerializer serializer];
     self.mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
@@ -423,8 +423,8 @@ static NSString *errorStr = nil;
 -(void)postLogin:(NSString*)interface parameters:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail{
     
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",PREFIX, interface];
-    self.mgr.requestSerializer.timeoutInterval = 10.0;
     self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+    self.mgr.requestSerializer.timeoutInterval = 10.0;
     self.mgr.responseSerializer = [AFJSONResponseSerializer serializer];
     self.mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
@@ -608,6 +608,39 @@ static NSString *errorStr = nil;
 -(void)updateToken:(NSString *)token AndExpireTime:(NSNumber *)expire {
     [[HLAccountManger sharedInstance] saveTokenExpireTime:expire];
     [[HLAccountManger sharedInstance] saveToken:token];
+}
+
+
+
+-(void)getImage:(NSString*)interface parameters:(NSMutableDictionary *)param success:(void (^)(id responseObject))success fail:(void (^)(NSString * error))fail{
+    
+//    NSString *urlStr = [NSString stringWithFormat:@"%@%@",PREFIX, interface];
+    NSString *urlStr = @"https://120.25.207.78/images/yamaha_1.jpg";
+    self.mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+    self.mgr.requestSerializer.timeoutInterval = 10.0;
+    self.mgr.responseSerializer = [AFImageResponseSerializer serializer];
+//    self.mgr.responseSerializer = [AFJSONResponseSerializer serializer];
+    self.mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/jpeg"];
+    
+    //拼接参数
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:param];
+    NSMutableURLRequest *requst = [[AFJSONRequestSerializer serializer] requestWithMethod:@"GET" URLString:urlStr parameters:dict error:nil];
+    //发送请求
+    NSURLSessionDataTask *dataTask = [self.mgr dataTaskWithRequest:requst completionHandler:^(NSURLResponse * _Nonnull response, id responseObject, NSError * _Nullable error) {
+        if (error) {
+            if (fail) {
+                fail(error.localizedDescription);
+            }
+        }else {
+            if (success) {
+                success(responseObject);
+            }
+            
+        }
+    }];
+    
+    [dataTask resume];
+    
 }
 
 @end

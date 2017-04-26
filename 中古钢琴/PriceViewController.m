@@ -54,7 +54,11 @@
         [weakSelf loadPriceData];
     }];
     
+    
 }
+
+
+
 
 
 - (void)loadPriceData {

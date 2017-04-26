@@ -74,6 +74,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(containViewDidTap:)];
     [self.containView addGestureRecognizer:tap];
     
+//    [self testDownImageByAFNetworking];
 }
 
 -(void)loadPianosPictures  {
@@ -406,5 +407,25 @@
 //- (BOOL)shouldAutorotate {
 //    return NO;
 //}
+
+//just a test, nothing
+- (void)testDownImageByAFNetworking {
+    HLHttpClient *client = [HLHttpClient sharedInstance];
+    [client getImage:nil parameters:nil success:^(id responseObject) {
+        NSLog(@"success");
+//        NSData *data = (NSData *)responseObject;
+//        UIImage *image = [UIImage imageWithData:data];
+        UIImage *image = (UIImage *)responseObject;
+        
+        UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
+//        imageV.size = image.size;
+        imageV.frame = CGRectMake(100, 100, image.size.width, image.size.height);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView addSubview:imageV];
+        });
+    } fail:^(NSString *error) {
+        NSLog(@"error");
+    }];
+}
 
 @end
